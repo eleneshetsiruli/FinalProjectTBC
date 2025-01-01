@@ -9,7 +9,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const methods = useFormContext<LoginFormData>();
 
   return (
-    <form onSubmit={methods.handleSubmit(onSubmit)}>
+    <form
+      className="flex flex-col gap-5 "
+      onSubmit={methods.handleSubmit(onSubmit)}
+    >
       <div>
         <LabelCva>Email</LabelCva>
         <InputCva

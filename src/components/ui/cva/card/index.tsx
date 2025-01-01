@@ -2,7 +2,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
 const cardStyles = cva(
-  "rounded-lg shadow-md transition-transform transform hover:scale-105 ",
+  " justify-center rounded-lg shadow-md transition-transform transform hover:scale-105 ",
   {
     variants: {
       bg: {
@@ -20,7 +20,7 @@ const cardStyles = cva(
         block: "block",
       },
       size: {
-        sm: "w-[340px] h-[300px]",
+        sm: "w-[340px] h-[350px]",
         md: "p-6 text-base",
         lg: "p-8 text-lg",
       },
@@ -29,6 +29,7 @@ const cardStyles = cva(
         thin: "border border-gray-300",
         thick: "border-2 border-gray-500",
       },
+
       padding: {
         sm: "p-4",
         md: "p-6",

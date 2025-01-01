@@ -27,7 +27,7 @@ interface ParagrCvaProps {
 
 export const ParagrCva: React.FC<ParagrCvaProps> = ({
   color = "primary",
-  size = "md",
+  size = "sm",
   children,
 }) => {
   return <div className={paragraphStyles({ color, size })}>{children}</div>;
