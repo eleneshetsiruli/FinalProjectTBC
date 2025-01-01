@@ -13,3 +13,7 @@ export interface LoginFormData {
 export interface LoginFormProps {
   onSubmit: SubmitHandler<LoginFormData>;
 }
+
+export interface InputLabelBoxProps {
+  children: ReactNode;
+}

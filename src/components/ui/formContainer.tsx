@@ -1,4 +1,4 @@
-import { FormContainerProps } from "./interfaces";
+import { FormContainerProps } from "../../pages/login/interfaces";
 
 export const FormContainer = ({ children }: FormContainerProps) => {
   return (

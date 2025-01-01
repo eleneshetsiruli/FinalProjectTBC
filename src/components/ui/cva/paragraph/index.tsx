@@ -8,11 +8,12 @@ const paragraphStyles = cva("text-base text-gray-700", {
       secondary: "text-gray-400",
     },
     size: {
-      sm: "text-sm",
+      sm: "text-[13px]",
       md: "text-base",
       lg: "text-lg",
     },
   },
+
   defaultVariants: {
     color: "primary",
     size: "md",

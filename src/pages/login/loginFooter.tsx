@@ -8,7 +8,7 @@ export const LoginFooter = () => {
         Don't Have an Account?
       </ParagrCva>
 
-      <Link className="hover:underline text-[#FF6700]" to={"#"}>
+      <Link className="hover:underline text-[#FF6700]" to={"/signUp"}>
         Sign Up
       </Link>
     </div>

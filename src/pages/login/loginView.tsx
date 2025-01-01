@@ -1,6 +1,6 @@
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FormContainer } from "./formContainer";
+import { FormContainer } from "../../components/ui/formContainer";
 import CardCva from "@/components/ui/cva/card";
 import { LoginFormData } from "./interfaces";
 import { LoginFooter } from "./loginFooter";
