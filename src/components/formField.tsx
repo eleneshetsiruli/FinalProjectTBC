@@ -15,6 +15,7 @@ const FormField = ({
   <InputLabelBox>
     <LabelCva>{label}</LabelCva>
     <InputCva
+      placeholder={`Enter ${label}`}
       id={name}
       type={type}
       {...register(name, { required: `${label} is required` })}

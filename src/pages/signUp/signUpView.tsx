@@ -19,7 +19,7 @@ export const SignUpView = () => {
 
   return (
     <FormContainer>
-      <CardCva size="md">
+      <CardCva size="md" padding="md" gap="md">
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
           <FormField
             label="First name"

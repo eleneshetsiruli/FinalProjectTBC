@@ -14,4 +14,5 @@ export interface FormFieldProps {
   type?: string;
   register: any;
   errors: FieldErrors<FieldValues>;
+  placeholder?: string;
 }

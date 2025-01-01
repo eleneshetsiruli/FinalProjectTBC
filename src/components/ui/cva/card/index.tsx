@@ -2,7 +2,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
 const cardStyles = cva(
-  " justify-center rounded-lg shadow-md transition-transform transform hover:scale-105 ",
+  " justify-center rounded-lg shadow-md transition-transform transform  ",
   {
     variants: {
       bg: {
