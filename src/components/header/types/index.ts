@@ -6,3 +6,8 @@ export interface SingleLinkProps {
 export interface LogoProps {
   size: string;
 }
+
+export interface UserMenuItemProps {
+  item: string;
+  path: string;
+}
