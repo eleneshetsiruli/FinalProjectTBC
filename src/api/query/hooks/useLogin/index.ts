@@ -1,22 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import supabase from "@/lib/supabase";
-import { LoginFormData } from "@/pages/login/interfaces";
 import { MutationKeys } from "../enums/mutationKeys";
-
-const signInWithEmailPassword = async (
-  data: LoginFormData
-): Promise<string> => {
-  const { email, password } = data;
-  const { error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
-
-  if (error) {
-    throw new Error(error.message);
-  }
-  return "Login successful";
-};
+import { signInWithEmailPassword } from "../../responce/login";
 
 export const useLogin = () => {
   return useMutation({

@@ -5,6 +5,7 @@ import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { FormContainer } from "@/components/ui/formContainer";
 import { SignUpFormInputs } from "./interfaces";
 import FormField from "@/components/formField/formField";
+import { useSignUp } from "@/api/query/hooks/useSignUp";
 
 export const SignUpView = () => {
   const {
@@ -14,8 +15,10 @@ export const SignUpView = () => {
   } = useForm<SignUpFormInputs>();
 
   const onSubmit: SubmitHandler<SignUpFormInputs> = (data) => {
-    console.log(data);
+    mutation.mutate(data);
   };
+
+  const mutation = useSignUp();
 
   return (
     <FormContainer>
@@ -49,10 +52,11 @@ export const SignUpView = () => {
           />
           <ButtonCva type="submit">Register</ButtonCva>
         </form>
+
         <ParagrCva color="secondary" size="sm">
           By creating an account, you agree with our
-          <span className="text-orange-600">Terms & conditions</span> and
-          <span className="text-orange-600"> Privacy policy</span>
+          <span className="text-orange-600"> Terms & conditions</span> and
+          <span className="text-orange-600"> Privacy policy</span>.
         </ParagrCva>
       </CardCva>
     </FormContainer>
