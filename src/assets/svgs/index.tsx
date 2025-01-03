@@ -1,9 +1,8 @@
 import { UserMenuItem } from "@/components/header/userMenuItem";
+import { pageEnums } from "@/pages/enums/pageEnums";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
@@ -25,9 +24,9 @@ export const User = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="flex flex-col gap-2 cursor-pointer ">
         <DropdownMenuSeparator />
-        <UserMenuItem item="Sign in" path="logIn" />
-        <UserMenuItem item="Sign up" path="signUp" />
-        <UserMenuItem item="Sign out" path="/" />
+        <UserMenuItem item="Sign in" path={pageEnums.LOGIN} />
+        <UserMenuItem item="Sign up" path={pageEnums.SIGNUP} />
+        <UserMenuItem item="Sign out" path={pageEnums.HOME} />
       </DropdownMenuContent>
     </DropdownMenu>
   );

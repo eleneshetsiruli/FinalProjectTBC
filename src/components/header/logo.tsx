@@ -1,16 +1,23 @@
-import Explore from "@/assets/ExploreEra.png";
+import ExploreEra from "@/assets/ExploreEra.png";
 import EraWhite from "@/assets/svgs/Erawhite.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { LogoProps } from "./types";
+import { pageEnums } from "@/pages/enums/pageEnums";
 
 export const Logo = ({ size }: LogoProps) => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const navigate = useNavigate();
+
+  const handelGoHome = () => {
+    navigate(pageEnums.HOME);
+  };
 
   return (
     <img
+      onClick={handelGoHome}
       className={size}
-      src={isHomePage ? EraWhite : Explore}
+      src={isHomePage ? EraWhite : ExploreEra}
       alt="Explore Era Logo"
     />
   );

@@ -8,9 +8,9 @@
     "target": "ESNext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["/src/*"]
     }
   },
 

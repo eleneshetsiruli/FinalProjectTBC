@@ -13,7 +13,7 @@ export const Header = () => {
         isHomePage ? "absolute w-full text-white" : ""
       }`}
     >
-      <Logo size="lg:w-[182px] w-[100px]" />
+      <Logo size="lg:w-[182px] w-[100px] cursor-pointer" />
       <NavLinks />
       <User />
     </div>
