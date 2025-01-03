@@ -1,9 +1,9 @@
-import { FieldError } from "react-hook-form";
-import { InputLabelBox } from "./ui/inputLabelBox";
-import { LabelCva } from "./ui/cva/formField/label";
-import InputCva from "./ui/cva/formField/input";
 import { FormFieldProps } from "@/pages/signUp/interfaces";
-import { ParagrCva } from "./ui/cva/paragraph";
+import { FieldError } from "react-hook-form";
+import { InputLabelBox } from "../ui/inputLabelBox";
+import { LabelCva } from "../ui/cva/formField/label";
+import InputCva from "../ui/cva/formField/input";
+import { ParagrCva } from "../ui/cva/paragraph";
 
 const FormField = ({
   label,

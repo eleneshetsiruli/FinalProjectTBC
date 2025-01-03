@@ -1,10 +1,10 @@
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import FormField from "@/components/formField";
+import { useForm, SubmitHandler } from "react-hook-form";
 import ButtonCva from "@/components/ui/cva/button";
 import CardCva from "@/components/ui/cva/card";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { FormContainer } from "@/components/ui/formContainer";
 import { SignUpFormInputs } from "./interfaces";
+import FormField from "@/components/formField/formField";
 
 export const SignUpView = () => {
   const {

@@ -8,7 +8,7 @@ const paragraphStyles = cva("text-base text-gray-700", {
       secondary: "text-gray-400",
     },
     size: {
-      sm: "text-[13px]",
+      sm: "text-[12px]",
       md: "text-base",
       lg: "text-lg",
     },

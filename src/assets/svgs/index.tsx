@@ -1,7 +1,7 @@
 export const User = () => {
   return (
     <svg
-      className="w-6"
+      className="w-3 lg:w-6"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
     >

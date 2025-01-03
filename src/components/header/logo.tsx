@@ -1,9 +1,17 @@
 import Explore from "@/assets/ExploreEra.png";
-
-interface LogoProps {
-  size: string;
-}
+import EraWhite from "@/assets/svgs/Erawhite.png";
+import { useLocation } from "react-router-dom";
+import { LogoProps } from "./types";
 
 export const Logo = ({ size }: LogoProps) => {
-  return <img className={size} src={Explore} alt="Explore Era Logo" />;
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  return (
+    <img
+      className={size}
+      src={isHomePage ? EraWhite : Explore}
+      alt="Explore Era Logo"
+    />
+  );
 };
