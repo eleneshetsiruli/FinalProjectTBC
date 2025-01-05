@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
     <div
-      className={`h-[50px] flex items-center justify-around   ${
+      className={`h-[50px] flex items-center justify-around  mb-16  ${
         isHomePage ? "absolute w-full text-white" : ""
       }`}
     >
