@@ -10,4 +10,5 @@ export interface LogoProps {
 export interface UserMenuItemProps {
   item: string;
   path: string;
+  onClick?: () => void;
 }
