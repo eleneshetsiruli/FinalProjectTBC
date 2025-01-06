@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import React from "react";
 
-const paragraphStyles = cva("text-base text-gray-700", {
+const paragraphStyles = cva("text-base text-gray-700 ", {
   variants: {
     color: {
       primary: "text-red-600",

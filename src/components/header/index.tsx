@@ -9,8 +9,8 @@ export const Header = () => {
 
   return (
     <div
-      className={`h-[50px] flex items-center justify-around  mb-16  ${
-        isHomePage ? "absolute w-full text-white" : ""
+      className={`h-[80px] flex items-center justify-around mb-16  ${
+        isHomePage ? "absolute w-full text-white " : ""
       }`}
     >
       <Logo size="lg:w-[182px] w-[100px] cursor-pointer" />

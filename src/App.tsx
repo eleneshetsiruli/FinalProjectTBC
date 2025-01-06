@@ -5,6 +5,7 @@ import { SignUpView } from "./pages/signUp/signUpView";
 import { MainLayout } from "./layout/mainLayOut";
 import HomeLayOut from "./pages/home/homeLayOut";
 import { pageEnums } from "./pages/enums/pageEnums";
+import { ServiceView } from "./pages/services/serviceView";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path={pageEnums.HOME} element={<HomeLayOut />} />
         <Route path={pageEnums.LOGIN} element={<LoginView />} />
         <Route path={pageEnums.SIGNUP} element={<SignUpView />} />
+        <Route path={pageEnums.SERVICES} element={<ServiceView />} />
       </Route>
     </Routes>
   );
