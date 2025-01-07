@@ -1,46 +1,21 @@
-// {
-//   "compilerOptions": {
-//     "strict": true,
-//     "noEmit": true,
-//     "noImplicitAny": true,
-//     "module": "ESNext", // or "ESModule"
-//     "moduleResolution": "Node",
-//     "target": "ESNext",
-//     "allowSyntheticDefaultImports": true,
-//     "esModuleInterop": true,
-//     "baseUrl": "./src",
-//     "resolveJsonModule": true,
-//     "skipLibCheck": true,
-//     "paths": {
-//       "@/*": ["/src/*"]
-//     }
-//   },
-
-//   "files": [],
-//   "references": [
-//     { "path": "./tsconfig.app.json" },
-//     { "path": "./tsconfig.node.json" }
-//   ]
-// }
-
 {
   "compilerOptions": {
     "strict": true,
     "noEmit": true,
     "noImplicitAny": true,
-    "module": "ESNext", // or "ESModule"
+    "module": "ESNext",
     "moduleResolution": "Node",
     "target": "ESNext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": ".", // Changed from "./src" to "."
+    "baseUrl": ".",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "paths": {
-      "@/*": ["src/*"] // Fixed the alias configuration
+      "@/*": ["src/*"]
     }
   },
-  "files": [], // Consider removing this or specifying entry points
+  "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }

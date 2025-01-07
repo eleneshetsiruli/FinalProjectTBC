@@ -3,4 +3,5 @@ export enum MutationKeys {
   SIGNUP = "signUp",
   COUNTRIES = "countries",
   BLOGS = "blogs",
+  SINGLECOUNTRY = "singleCountry",
 }

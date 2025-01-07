@@ -14,7 +14,7 @@ export const SimpleSlider = ({ countries }: SimpleSliderProps) => {
       </div>
       <Slider {...settings}>
         {countries.map((country) => (
-          <SingleCountry country={country} />
+          <SingleCountry key={country.id} country={country} />
         ))}
       </Slider>
     </div>
