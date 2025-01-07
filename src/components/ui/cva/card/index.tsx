@@ -22,6 +22,7 @@ const cardStyles = cva(
       size: {
         sm: "w-[340px] h-[350px]",
         md: "w-[340px] h-[580px]",
+        custom: "lg:w-[640px] lg:h-[100%]",
         lg: "w-[100%] h-[100%]",
       },
       border: {
