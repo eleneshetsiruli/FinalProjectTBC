@@ -8,3 +8,7 @@ export interface BlogCardProps {
   isExpanded: boolean;
   onToggle: () => void;
 }
+
+export interface LoadButtonProps {
+  handleLoadMore: () => void;
+}

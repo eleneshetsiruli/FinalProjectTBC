@@ -2,8 +2,8 @@ import { ParagrCva } from "@/components/ui/cva/paragraph";
 import CardCva from "@/components/ui/cva/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { truncateText } from "../trunc";
-import { BlogCardProps } from "../types";
+import { truncateText } from "../../trunc";
+import { BlogCardProps } from "../../types";
 
 const BlogCard: React.FC<BlogCardProps> = ({ blog, isExpanded, onToggle }) => {
   return (

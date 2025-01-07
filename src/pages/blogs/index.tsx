@@ -1,14 +1,23 @@
 import { useFetchBlogs } from "@/api/query/hooks/useFetchBlogs";
 import { useToggleSet } from "@/hooks/useToggleSet";
-import BlogCard from "./blogCard";
+import { useState } from "react";
+import BlogCard from "./components/blogCard";
+import { LoadButton } from "./components/loadButton";
 
 export const BlogsView = () => {
-  const { data } = useFetchBlogs();
+  const { data: blogs } = useFetchBlogs();
   const { toggledItems: expandedBlogs, handleToggle } = useToggleSet();
+  const [visibleCount, setVisibleCount] = useState(2);
+
+  const handleLoadMore = () => {
+    if (blogs && visibleCount < blogs.length) {
+      setVisibleCount((prev) => prev + 2);
+    }
+  };
 
   return (
     <div className="flex flex-col justify-center items-center gap-4">
-      {data?.map((blog) => (
+      {blogs?.slice(0, visibleCount).map((blog) => (
         <BlogCard
           key={blog.id}
           blog={blog}
@@ -16,6 +25,9 @@ export const BlogsView = () => {
           onToggle={() => handleToggle(blog.id)}
         />
       ))}
+      {visibleCount < (blogs?.length || 0) && (
+        <LoadButton handleLoadMore={handleLoadMore} />
+      )}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useCountries } from "@/api/query/hooks/useCountries";
-import { usePagination } from "@/api/query/hooks/usePagination";
+import { usePagination } from "@/hooks/usePagination";
 import { SingleCountry } from "@/pages/home/countries/singleCountry.tsx";
 import PaginationControls from "../pagination";
 
