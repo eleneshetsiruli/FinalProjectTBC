@@ -8,6 +8,7 @@ import { pageEnums } from "./pages/enums/pageEnums";
 import { ServiceView } from "./pages/services/serviceView";
 import { SingleCountryView } from "./pages/singleCountryView";
 import { BlogsView } from "./pages/blogs";
+import { AboutUsView } from "./pages/aboutUs";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path={pageEnums.SIGNUP} element={<SignUpView />} />
         <Route path={pageEnums.SERVICES} element={<ServiceView />} />
         <Route path={pageEnums.BLOGS} element={<BlogsView />} />
+        <Route path={pageEnums.ABOUT} element={<AboutUsView />} />
         <Route path=":id" element={<SingleCountryView />} />
       </Route>
     </Routes>

@@ -8,7 +8,6 @@ export const BlogsView = () => {
   const { data: blogs } = useFetchBlogs();
   const { toggledItems: expandedBlogs, handleToggle } = useToggleSet();
   const [visibleCount, setVisibleCount] = useState(2);
-
   const handleLoadMore = () => {
     if (blogs && visibleCount < blogs.length) {
       setVisibleCount((prev) => prev + 2);

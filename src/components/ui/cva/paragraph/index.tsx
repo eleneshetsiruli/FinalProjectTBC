@@ -8,6 +8,7 @@ const paragraphStyles = cva("text-base text-gray-700 ", {
       secondary: "text-gray-400",
       def: "text-white",
       green: "text-green-700",
+      orange: "text-orange-600",
     },
     size: {
       sm: "text-[12px]",
@@ -15,7 +16,9 @@ const paragraphStyles = cva("text-base text-gray-700 ", {
       lg: "text-lg",
       xl: "text-[40px]",
       wid200: "w-[200px]",
+      wid300: "w-[300px] lg:w-[600px]",
       text30: "text-[25px]",
+      wid600: "w-[600px]",
     },
   },
 
@@ -26,8 +29,8 @@ const paragraphStyles = cva("text-base text-gray-700 ", {
 });
 
 interface ParagrCvaProps {
-  color?: "primary" | "secondary" | "def" | "green";
-  size?: "sm" | "md" | "lg" | "xl" | "wid200" | "text30";
+  color?: "primary" | "secondary" | "def" | "green" | "orange";
+  size?: "sm" | "md" | "lg" | "xl" | "wid200" | "text30" | "wid300";
   children: React.ReactNode;
 }
 
