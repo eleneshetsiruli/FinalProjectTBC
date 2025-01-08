@@ -19,7 +19,7 @@ const inputCva = cva(
       variant: "default",
       size: "md",
     },
-  }
+  },
 );
 
 interface InputProps
@@ -35,7 +35,7 @@ const InputCva = forwardRef<HTMLInputElement, InputProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 InputCva.displayName = "InputCva";

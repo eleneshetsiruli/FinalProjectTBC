@@ -16,14 +16,16 @@ export const BlogsView = () => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-4">
-      {blogs?.slice(0, visibleCount).map((blog) => (
-        <BlogCard
-          key={blog.id}
-          blog={blog}
-          isExpanded={expandedBlogs.has(blog.id)}
-          onToggle={() => handleToggle(blog.id)}
-        />
-      ))}
+      {blogs
+        ?.slice(0, visibleCount)
+        .map((blog) => (
+          <BlogCard
+            key={blog.id}
+            blog={blog}
+            isExpanded={expandedBlogs.has(blog.id)}
+            onToggle={() => handleToggle(blog.id)}
+          />
+        ))}
       {visibleCount < (blogs?.length || 0) && (
         <LoadButton handleLoadMore={handleLoadMore} />
       )}

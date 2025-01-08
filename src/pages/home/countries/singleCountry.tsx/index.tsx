@@ -16,8 +16,8 @@ export const SingleCountry: React.FC<SingleCountryProps> = ({ country }) => {
         </ParagrCva>
         <CountryImg src={country.image} />
         <ParagrCva color="green">
-          <span className="text-gray-600">Price:</span> {country.price}$
-          <span className="text-gray-600">-Per day</span>
+          <span className="text-gray-600">Price:</span> {country.price}€
+          <span className="text-gray-600"></span>
         </ParagrCva>
       </div>
     </Link>

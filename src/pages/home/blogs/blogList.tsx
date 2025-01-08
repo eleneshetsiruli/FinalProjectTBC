@@ -13,7 +13,7 @@ const BlogList: React.FC = () => {
       <ParagrCva size="xl" color="secondary">
         Blogs
       </ParagrCva>
-      <div className="flex justify-center  flex-wrap lg:w-[1000px] gap-5">
+      <div className="flex justify-center  flex-wrap  lg:w-[1000px] gap-5">
         {blogs?.map((blog: any) => (
           <div className="flex flex-col " key={blog.id}>
             <CountryImg src={blog.image_url} />
