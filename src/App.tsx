@@ -9,6 +9,7 @@ import { ServiceView } from "./pages/services/serviceView";
 import { SingleCountryView } from "./pages/singleCountryView";
 import { BlogsView } from "./pages/blogs";
 import { AboutUsView } from "./pages/aboutUs";
+import { FlightsView } from "./pages/flights/flightsView";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path={pageEnums.SERVICES} element={<ServiceView />} />
         <Route path={pageEnums.BLOGS} element={<BlogsView />} />
         <Route path={pageEnums.ABOUT} element={<AboutUsView />} />
+        <Route path={pageEnums.FLIGHTS} element={<FlightsView />} />
+
         <Route path=":id" element={<SingleCountryView />} />
       </Route>
     </Routes>

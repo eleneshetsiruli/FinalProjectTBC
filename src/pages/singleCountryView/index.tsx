@@ -16,7 +16,7 @@ export const SingleCountryView = () => {
   return (
     <div className="flex flex-col items-center gap-5">
       <img
-        className="w-[100%] h-[300px] object-scale-down "
+        className="w-full h-64 object-cover rounded-lg shadow-lg "
         src={country?.image}
         alt={country?.name}
       />

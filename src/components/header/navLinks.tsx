@@ -8,7 +8,7 @@ export const NavLinks = () => {
       <SingleLink title="About us" goTo={pageEnums.ABOUT} />
       <SingleLink title="Blogs" goTo={pageEnums.BLOGS} />
       <SingleLink title="Our Tours" goTo={pageEnums.SERVICES} />
-      <SingleLink title="Our offers" goTo={pageEnums.OFFERS} />
+      <SingleLink title="Flights" goTo={pageEnums.FLIGHTS} />
     </div>
   );
 };
