@@ -13,7 +13,15 @@ export interface Country {
   label: string;
 }
 
-export interface ComboboxDemoProps {
+export interface ControlledComboboxDemoProps {
   select: string;
-  list: Country[];
+  list: { label: string; value: string }[];
+  value: string;
+  onChange: (value: string) => void;
+}
+
+export interface CalendarFormProps {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
 }

@@ -15,11 +15,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { ComboboxDemoProps } from "../../types";
+import { ControlledComboboxDemoProps } from "../../types";
 
-export function ComboboxDemo({ select, list }: ComboboxDemoProps) {
+export function ComboboxDemo({
+  select,
+  list,
+  value,
+  onChange,
+}: ControlledComboboxDemoProps) {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
   const sortedList = [...list].sort((a, b) => a.label.localeCompare(b.label));
 
   return (
@@ -34,6 +38,7 @@ export function ComboboxDemo({ select, list }: ComboboxDemoProps) {
           {value
             ? sortedList.find((country) => country.value === value)?.label
             : select}
+
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -48,7 +53,7 @@ export function ComboboxDemo({ select, list }: ComboboxDemoProps) {
                   key={country.value}
                   value={country.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
+                    onChange(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}
                 >

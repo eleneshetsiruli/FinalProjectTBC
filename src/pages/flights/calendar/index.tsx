@@ -17,8 +17,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { CalendarFormProps } from "../types";
 
-export function CalendarForm({ label }: { label: string }) {
+export function CalendarForm({ label, value, onChange }: CalendarFormProps) {
   const form = useForm();
 
   return (
@@ -27,7 +28,7 @@ export function CalendarForm({ label }: { label: string }) {
         <FormField
           control={form.control}
           name="dob"
-          render={({ field }) => (
+          render={() => (
             <FormItem className="flex flex-col">
               <FormLabel className="font-bold">{label}</FormLabel>
               <Popover>
@@ -37,11 +38,11 @@ export function CalendarForm({ label }: { label: string }) {
                       variant={"outline"}
                       className={cn(
                         "w-[240px] pl-3 text-left font-normal",
-                        !field.value && "text-muted-foreground"
+                        !value && "text-muted-foreground"
                       )}
                     >
-                      {field.value ? (
-                        format(field.value, "PPP")
+                      {value ? (
+                        format(new Date(value), "PPP")
                       ) : (
                         <span>Pick a date</span>
                       )}
@@ -52,8 +53,10 @@ export function CalendarForm({ label }: { label: string }) {
                 <PopoverContent className="w-auto p-0" align="start">
                   <Calendar
                     mode="single"
-                    selected={field.value}
-                    onSelect={field.onChange}
+                    selected={value ? new Date(value) : undefined}
+                    onSelect={(date) =>
+                      onChange(date ? date.toISOString() : "")
+                    }
                     disabled={(date) =>
                       date < new Date() || date < new Date("1900-01-01")
                     }

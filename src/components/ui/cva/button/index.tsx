@@ -20,6 +20,7 @@ export const buttonStyles = cva(
         l: "w-[300px]",
         lg: "px-5 py-3 text-lg",
         full: "w-full",
+        custom: "w-[20px] h-[10px]",
       },
 
       height: {
@@ -42,7 +43,7 @@ export const buttonStyles = cva(
       rounded: "md",
       height: "custom",
     },
-  },
+  }
 );
 
 const ButtonCva: React.FC<ButtonProps> = ({
