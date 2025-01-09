@@ -6,7 +6,9 @@ import { pageEnums } from "@/pages/enums/pageEnums";
 
 export const Footer = () => {
   const location = useLocation();
-  const isFlightsPage = location.pathname === pageEnums.FLIGHTS;
+  const isFlightsPage =
+    location.pathname === pageEnums.FLIGHTS ||
+    location.pathname === pageEnums.HOME;
   console.log(isFlightsPage);
 
   return (

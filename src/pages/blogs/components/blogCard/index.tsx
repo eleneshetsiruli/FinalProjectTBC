@@ -4,12 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { truncateText } from "../../trunc";
 import { BlogCardProps } from "../../types";
+import dayjs from "dayjs";
 
 const BlogCard: React.FC<BlogCardProps> = ({ blog, isExpanded, onToggle }) => {
+  const formattedDate = dayjs(blog.created_at).format("YYYY-MM-DD");
   return (
     <CardCva size="custom">
-      <ParagrCva color="secondary">{blog.title_en}</ParagrCva>
+      <div className="flex justify-between flex-col lg:flex-row">
+        <ParagrCva color="secondary">{blog.title_en}</ParagrCva>
+        <ParagrCva color="orange">
+          <span className="italic text-primary">Created:</span> {formattedDate}
+        </ParagrCva>
+      </div>
       <img src={blog.image_url} alt="image" className="w-full h-auto" />
+
       <div className="flex flex-col">
         <ParagrCva color="secondary">
           {isExpanded

@@ -6,6 +6,7 @@ import { LoadButton } from "./components/loadButton";
 
 export const BlogsView = () => {
   const { data: blogs } = useFetchBlogs();
+
   const { toggledItems: expandedBlogs, handleToggle } = useToggleSet();
   const [visibleCount, setVisibleCount] = useState(2);
   const handleLoadMore = () => {
