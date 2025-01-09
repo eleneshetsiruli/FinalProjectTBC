@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFetchBlogs } from "@/api/query/hooks/useFetchBlogs";
 import { Loading } from "@/pages/isLoading";
