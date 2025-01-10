@@ -1,8 +1,16 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import cover from "@/assets/svgs/cover.png";
 import ButtonCva from "@/components/ui/cva/button";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 
-export const Cover = () => {
+export const Cover: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/1");
+  };
+
   return (
     <div
       className="h-screen bg-cover bg-center"
@@ -12,12 +20,13 @@ export const Cover = () => {
     >
       <div className="text-center lg:w-[150px] absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <ParagrCva size="lg" color="def">
-          Visit Mountains In
+          Offer of the week
         </ParagrCva>
-        <ParagrCva size="lg" color="def">
-          ITALY
-        </ParagrCva>
-        <ButtonCva size="sm">See offer</ButtonCva>
+        <h1 className="text-white font-bold text-3xl animate-bounce"> ITALY</h1>
+
+        <ButtonCva onClick={handleNavigate} size="sm">
+          See offer
+        </ButtonCva>
       </div>
     </div>
   );

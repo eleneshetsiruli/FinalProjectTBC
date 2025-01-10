@@ -3,10 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Input } from "@/components/ui/input";
 import { useNavigate, useLocation } from "react-router-dom";
-
-interface SearchProps {
-  onSearchChange: (term: string) => void;
-}
+import { SearchProps } from "./types";
 
 const Search = ({ onSearchChange }: SearchProps) => {
   const [searchTerm, setSearchTerm] = useState("");

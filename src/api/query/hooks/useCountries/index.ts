@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { MutationKeys } from "@/api/query/hooks/enums/mutationKeys";
 import { fetchCountries } from "@/api/query/responce/fetchCountries";
 
-export const useCountries = (page: number, limit: number) => {
+export const useCountries = () => {
   return useQuery({
-    queryKey: [MutationKeys.COUNTRIES, page, limit],
-    queryFn: () => fetchCountries(page, limit),
+    queryKey: [MutationKeys.COUNTRIES],
+    queryFn: fetchCountries,
     staleTime: 5000,
   });
 };

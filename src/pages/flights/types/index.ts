@@ -25,3 +25,7 @@ export interface CalendarFormProps {
   value: string;
   onChange: (value: string) => void;
 }
+export interface PassengerProps {
+  value: string;
+  onChange: (value: string) => void;
+}

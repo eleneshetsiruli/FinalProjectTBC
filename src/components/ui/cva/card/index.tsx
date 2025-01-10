@@ -57,7 +57,7 @@ const cardStyles = cva(
       flexDirection: "column",
       gap: "md",
     },
-  },
+  }
 );
 
 type CardProps = VariantProps<typeof cardStyles> & {

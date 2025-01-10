@@ -5,5 +5,6 @@ export enum pageEnums {
   ABOUT = "about",
   BLOGS = "blogs",
   SERVICES = "services",
+  HOTELS = "hotels",
   FLIGHTS = "/flights",
 }

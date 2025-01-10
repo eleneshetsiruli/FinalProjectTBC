@@ -1,13 +1,9 @@
 import supabase from "@/lib/supabase";
 
-export const fetchCountries = async (page: number, limit: number) => {
-  const start = (page - 1) * limit;
-  const end = start + limit - 1;
-
+export const fetchCountries = async () => {
   const { data, error, count } = await supabase
     .from("countries")
-    .select("*", { count: "exact" })
-    .range(start, end);
+    .select("*", { count: "exact" });
 
   if (error) {
     throw new Error(error.message);

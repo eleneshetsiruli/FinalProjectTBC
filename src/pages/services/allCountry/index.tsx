@@ -1,20 +1,13 @@
 import { useCountries } from "@/api/query/hooks/useCountries";
-import { usePagination } from "@/hooks/usePagination";
 import { useState, useCallback } from "react";
-import PaginationControls from "../pagination";
 import { SearchAndFilter } from "../components/searchAndFilter";
 import { CountryList } from "../components/countryListProps";
 
 export const AllCountry = () => {
-  const limit = 6;
-  const { data, isLoading, isFetching } = useCountries(1, limit);
+  const { data, isLoading, isFetching } = useCountries();
   const [searchTerm, setSearchTerm] = useState("");
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 3000]);
-  const [sortOrder, setSortOrder] = useState<string>("low-to-high"); // Add state to track sorting order
-  const { page, totalPages, handleNext, handlePrevious, goToPage } =
-    usePagination(data?.total || 0, limit);
-
-  const { data: paginatedData } = useCountries(page, limit);
+  const [sortOrder, setSortOrder] = useState<string>("low-to-high");
 
   const handleSearchChange = (term: string) => {
     setSearchTerm(term);
@@ -28,7 +21,7 @@ export const AllCountry = () => {
     setSortOrder(sortOrder);
   }, []);
 
-  const filteredCountries = paginatedData?.countries
+  const filteredCountries = data?.countries
     ?.filter(
       (country) =>
         country.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -53,20 +46,12 @@ export const AllCountry = () => {
         onPriceRangeChange={handlePriceRangeChange}
         onSortChange={handleSortChange}
       />
-
       <CountryList
         isLoading={isLoading}
         isFetching={isFetching}
         countries={filteredCountries || []}
       />
-
-      <PaginationControls
-        page={page}
-        totalPages={totalPages}
-        onPrevious={handlePrevious}
-        onNext={handleNext}
-        onPageChange={goToPage}
-      />
+      x
     </>
   );
 };

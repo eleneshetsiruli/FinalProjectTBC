@@ -4,11 +4,12 @@ import { SingleLink } from "./singleLink";
 export const NavLinks = () => {
   return (
     <div className="lg:flex gap-16 hidden">
-      <SingleLink title="Home" goTo={pageEnums.HOME} />
-      <SingleLink title="About us" goTo={pageEnums.ABOUT} />
-      <SingleLink title="Blogs" goTo={pageEnums.BLOGS} />
-      <SingleLink title="Our Tours" goTo={pageEnums.SERVICES} />
-      <SingleLink title="Flights" goTo={pageEnums.FLIGHTS} />
+      <SingleLink title="HOME" goTo={pageEnums.HOME} />
+      <SingleLink title="ABOUT US" goTo={pageEnums.ABOUT} />
+      <SingleLink title="BLOGS" goTo={pageEnums.BLOGS} />
+      <SingleLink title="OUR TOURS" goTo={pageEnums.SERVICES} />
+      <SingleLink title="HOTELS" goTo={pageEnums.HOTELS} />
+      <SingleLink title="FLIGHTS" goTo={pageEnums.FLIGHTS} />
     </div>
   );
 };
