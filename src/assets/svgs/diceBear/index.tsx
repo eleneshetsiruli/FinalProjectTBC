@@ -1,14 +1,13 @@
 import { useAuth } from "@/api/query/hooks/useAuth";
 
 export const Dicebear = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
+  console.log(user);
 
-  const icons = ["Destiny", "Sophia", "Leah", "Emery", "Ryker"];
-  const randomIcon = icons[Math.floor(Math.random() * icons.length)];
   return (
     <img
-      className={`${isAuthenticated ? `text-card` : ""}h-10 w-10`}
-      src={`https://api.dicebear.com/9.x/adventurer/svg?seed=${randomIcon}`}
+      className={`${isAuthenticated ? `text-card` : ""}h-8 w-10`}
+      src={`https://api.dicebear.com/9.x/avataaars/svg?seed=Vivian`}
       alt="avatar"
     />
   );

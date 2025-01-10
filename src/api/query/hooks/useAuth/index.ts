@@ -13,7 +13,7 @@ export const useLogout = () => {
 
   const logout = () => {
     queryClient.removeQueries({ queryKey: ["user"] });
-
+    localStorage.removeItem("user");
     console.log("User logged out.");
   };
 

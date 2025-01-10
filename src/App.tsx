@@ -12,6 +12,7 @@ import { AboutUsView } from "./pages/aboutUs";
 import { FlightsView } from "./pages/flights/flightsView";
 import SingleBlog from "./pages/singleBlog";
 import { HotelsView } from "./pages/hotels";
+import { ProfileView } from "./pages/profileInfo";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path={pageEnums.ABOUT} element={<AboutUsView />} />
         <Route path={pageEnums.FLIGHTS} element={<FlightsView />} />
         <Route path={pageEnums.HOTELS} element={<HotelsView />} />
+        <Route path={pageEnums.PROFILE} element={<ProfileView />} />
 
         <Route path="/blog/:blogId" element={<SingleBlog />} />
 

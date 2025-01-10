@@ -39,11 +39,14 @@ export const User = () => {
             <UserMenuItem item="Sign up" path={pageEnums.SIGNUP} />
           </>
         ) : (
-          <UserMenuItem
-            onClick={logout}
-            item="Sign out"
-            path={pageEnums.HOME}
-          />
+          <>
+            <UserMenuItem
+              onClick={logout}
+              item="Sign out"
+              path={pageEnums.HOME}
+            />
+            <UserMenuItem item="Profile info" path={pageEnums.PROFILE} />
+          </>
         )}
       </DropdownMenuContent>
     </DropdownMenu>
