@@ -1,4 +1,4 @@
-import { useAuth, useLogout } from "@/api/query/hooks/useAuth";
+import { useLogout } from "@/api/query/hooks/useAuth";
 import { UserMenuItem } from "@/components/header/userMenuItem";
 import { pageEnums } from "@/pages/enums/pageEnums";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,19 +13,21 @@ import { Dicebear } from "./diceBear";
 
 export const User = () => {
   const logout = useLogout();
-  const { isAuthenticated, user } = useAuth();
+  const userSession = localStorage.getItem("user");
+  const parsedSession = userSession ? JSON.parse(userSession) : null;
+  const userEmail = parsedSession?.user?.email;
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        {isAuthenticated ? (
+        {userSession ? (
           <div className="flex items-center gap-2 hover:text-card">
-            <h1>{user?.user.email?.split("@")[0]}</h1>
+            <h1>{userEmail?.split("@")[0]}</h1>
             <Dicebear />
           </div>
         ) : (
           <FontAwesomeIcon
-            className={`${isAuthenticated ? `text-card` : ""}h-5 w-5 `}
+            className={`${!userSession ? `text-card` : ""}h-5 w-5 `}
             icon={faUser}
           />
         )}
@@ -33,7 +35,7 @@ export const User = () => {
       <DropdownMenuContent className="flex flex-col gap-2 cursor-pointer ">
         <DropdownMenuSeparator />
 
-        {!isAuthenticated ? (
+        {!userSession ? (
           <>
             <UserMenuItem item="Sign in" path={pageEnums.LOGIN} />
             <UserMenuItem item="Sign up" path={pageEnums.SIGNUP} />

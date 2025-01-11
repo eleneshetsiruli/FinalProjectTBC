@@ -1,10 +1,10 @@
-import { useAuth } from "@/api/query/hooks/useAuth";
 import { Navigate, Outlet } from "react-router-dom";
 
 export const ProtectedRoute = () => {
-  const { isAuthenticated } = useAuth();
+  const userSession = localStorage.getItem("user");
+  console.log(userSession);
 
-  if (!isAuthenticated) {
+  if (!userSession) {
     return <Navigate to="/login" replace />;
   }
 
