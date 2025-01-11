@@ -8,4 +8,5 @@ export enum pageEnums {
   HOTELS = "hotels",
   FLIGHTS = "/flights",
   PROFILE = "profile",
+  ADDBLOG = "/addBlog",
 }

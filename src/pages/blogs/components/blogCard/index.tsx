@@ -16,7 +16,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, isExpanded, onToggle }) => {
           <span className="italic text-primary">Created:</span> {formattedDate}
         </ParagrCva>
       </div>
-      <img src={blog.image_url} alt="image" className="w-full h-auto" />
+      <img src={blog.image_url} alt="image" className="w-full h-[450px]" />
 
       <div className="flex flex-col">
         <ParagrCva color="secondary">
