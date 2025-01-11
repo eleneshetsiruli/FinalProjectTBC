@@ -1,5 +1,16 @@
+# #!/usr/bin/env sh
+# . "$(dirname -- "$0")/_/husky.sh"
+
+# npm run check-prettier
+# npm run check-types
+
+
+
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+echo "Running Prettier..."
 npm run check-prettier
+
+echo "Running TypeScript checks..."
 npm run check-types
