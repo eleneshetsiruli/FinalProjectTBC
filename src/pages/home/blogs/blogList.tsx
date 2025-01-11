@@ -45,7 +45,7 @@ const BlogList: React.FC = () => {
   };
 
   return (
-    <div className="ml-10 flex flex-col gap-2 justify-center items-center mt-14">
+    <div className=" flex flex-col gap-2 justify-center items-center mt-14">
       <h1 className="text-card text-lg">Blogs</h1>
       <div className="flex justify-center flex-wrap lg:w-[1000px] gap-5">
         {blogs?.map((blog: any) => (
