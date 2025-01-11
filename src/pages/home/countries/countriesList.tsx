@@ -6,10 +6,7 @@ import "./slider/countriesList.css";
 import { SimpleSlider } from "./slider/simpleSlider";
 
 export const CountriesList = () => {
-  const page = 1;
-  const limit = 6;
-
-  const { data, isLoading } = useCountries(page, limit);
+  const { data, isLoading } = useCountries();
   if (isLoading) return <Loading />;
   const countries = data?.countries || [];
 

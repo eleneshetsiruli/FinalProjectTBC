@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface Profile {
   id: string;
   username: string;
@@ -15,3 +17,11 @@ export interface PropsProfile {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+export interface ProfileContentProps {
+  profile: Profile | undefined;
+}
+
+export type ProfileContainerProps = {
+  children: ReactNode;
+};

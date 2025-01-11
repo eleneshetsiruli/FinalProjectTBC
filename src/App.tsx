@@ -13,6 +13,7 @@ import { FlightsView } from "./pages/flights/flightsView";
 import SingleBlog from "./pages/singleBlog";
 import { HotelsView } from "./pages/hotels";
 import { ProfileView } from "./pages/profileInfo";
+import { ProtectedRoute } from "./routes/ProtectedRoutes";
 
 function App() {
   return (
@@ -21,16 +22,16 @@ function App() {
         <Route path={pageEnums.HOME} element={<HomeLayOut />} />
         <Route path={pageEnums.LOGIN} element={<LoginView />} />
         <Route path={pageEnums.SIGNUP} element={<SignUpView />} />
-        <Route path={pageEnums.SERVICES} element={<ServiceView />} />
-        <Route path={pageEnums.BLOGS} element={<BlogsView />} />
-        <Route path={pageEnums.ABOUT} element={<AboutUsView />} />
-        <Route path={pageEnums.FLIGHTS} element={<FlightsView />} />
-        <Route path={pageEnums.HOTELS} element={<HotelsView />} />
-        <Route path={pageEnums.PROFILE} element={<ProfileView />} />
-
-        <Route path="/blog/:blogId" element={<SingleBlog />} />
-
-        <Route path=":id" element={<SingleCountryView />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path={pageEnums.SERVICES} element={<ServiceView />} />
+          <Route path={pageEnums.BLOGS} element={<BlogsView />} />
+          <Route path={pageEnums.ABOUT} element={<AboutUsView />} />
+          <Route path={pageEnums.FLIGHTS} element={<FlightsView />} />
+          <Route path={pageEnums.HOTELS} element={<HotelsView />} />
+          <Route path={pageEnums.PROFILE} element={<ProfileView />} />
+          <Route path="/blog/:blogId" element={<SingleBlog />} />
+          <Route path=":id" element={<SingleCountryView />} />
+        </Route>
       </Route>
     </Routes>
   );

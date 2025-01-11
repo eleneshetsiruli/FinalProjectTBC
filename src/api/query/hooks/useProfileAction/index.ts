@@ -1,45 +1,46 @@
-import { useState } from "react";
 import supabase from "@/lib/supabase";
-import { useProfile } from "@/api/query/hooks/useProfile";
+import { Profile } from "@/pages/profileInfo/types";
+import { useEffect, useState } from "react";
 
-export const useProfileActions = () => {
-  const { data: profile, isLoading, isError, error } = useProfile();
+export const useProfileEdit = (profile: Profile | null | undefined) => {
   const [isEditMode, setIsEditMode] = useState(false);
-  const [updatedProfile, setUpdatedProfile] = useState(profile);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const [updatedProfile, setUpdatedProfile] = useState<
+    Profile | null | undefined
+  >(profile);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setUpdatedProfile((prev) => (prev ? { ...prev, [name]: value } : prev));
+    setUpdatedProfile((prev) => (prev ? { ...prev, [name]: value } : null));
   };
 
   const handleSave = async () => {
-    if (updatedProfile && updatedProfile.id) {
-      const { error: updateError } = await supabase
+    if (!updatedProfile) return;
+    try {
+      const { error } = await supabase
         .from("profiles")
         .update(updatedProfile)
-        .eq("id", updatedProfile.id)
-        .single();
+        .eq("id", updatedProfile.id);
 
-      if (updateError) {
-        console.error(updateError.message);
+      if (error) {
+        console.error("Error saving profile:", error);
         return;
       }
 
       setIsEditMode(false);
+    } catch (error) {
+      console.error("Error saving profile:", error);
     }
   };
 
+  useEffect(() => {
+    setUpdatedProfile(profile);
+  }, [profile]);
+
   return {
-    profile,
-    isLoading,
-    isError,
-    error,
     isEditMode,
     setIsEditMode,
     updatedProfile,
-    setUpdatedProfile,
     handleChange,
     handleSave,
   };
