@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { ButtonProps } from "./types";
 
-export const buttonStyles = cva(
+const buttonStyles = cva(
   "inline-flex items-center justify-center rounded-md font-medium transition-colors ",
   {
     variants: {
@@ -43,7 +43,7 @@ export const buttonStyles = cva(
       rounded: "md",
       height: "custom",
     },
-  },
+  }
 );
 
 const ButtonCva: React.FC<ButtonProps> = ({

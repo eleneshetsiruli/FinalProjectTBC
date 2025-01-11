@@ -9,7 +9,6 @@ export const Footer = () => {
   const isFlightsPage =
     location.pathname === pageEnums.FLIGHTS ||
     location.pathname === pageEnums.HOME;
-  console.log(isFlightsPage);
 
   return (
     <div

@@ -17,6 +17,7 @@ export const MiddleBox = () => {
       <ParagrCva size="text30" color="secondary">
         Links
       </ParagrCva>
+
       <div className="flex flex-col gap-2">
         {links.map(({ label, to }, i) => (
           <Link key={i} to={to}>

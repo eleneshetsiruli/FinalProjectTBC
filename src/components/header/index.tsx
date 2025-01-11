@@ -2,6 +2,7 @@ import { User } from "@/assets/svgs";
 import { Logo } from "./logo";
 import { NavLinks } from "./navLinks";
 import { useLocation } from "react-router-dom";
+import LanguageSwitcher from "./changeLanguage";
 
 export const Header = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ export const Header = () => {
       <Logo size="lg:w-[182px] w-[100px] cursor-pointer" />
       <NavLinks />
       <User />
+      <LanguageSwitcher />
     </div>
   );
 };

@@ -4,11 +4,12 @@ import { TourTips } from "./tourTips";
 
 export const SingleCountryView = () => {
   const { id } = useParams();
+  const { country } = useFetchCountry(id || "");
 
   if (!id) {
     return <div>Country ID is missing</div>;
   }
-  const { country } = useFetchCountry(id);
+
   const tours = country?.description_en
     ?.split(".")
     .filter((item: string) => item.trim() !== "");

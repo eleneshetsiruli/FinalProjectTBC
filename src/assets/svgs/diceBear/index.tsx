@@ -1,8 +1,7 @@
 import { useAuth } from "@/api/query/hooks/useAuth";
 
 export const Dicebear = () => {
-  const { isAuthenticated, user } = useAuth();
-  console.log(user);
+  const { isAuthenticated } = useAuth();
 
   return (
     <img

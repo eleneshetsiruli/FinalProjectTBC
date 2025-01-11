@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import { LabelProps } from "../types";
 
-export const labelCva = cva("font-medium", {
+const labelCva = cva("font-medium", {
   variants: {
     color: {
       secondary: "text-secondary",
