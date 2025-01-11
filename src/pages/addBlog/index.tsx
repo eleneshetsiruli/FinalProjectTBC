@@ -19,7 +19,7 @@ export const AddBlog = () => {
   const { message, loading, handleFileUpload } = useAddBlog();
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -56,7 +56,7 @@ export const AddBlog = () => {
 
       // Optionally, clear the file input field
       const fileInput = document.getElementById(
-        "image_url"
+        "image_url",
       ) as HTMLInputElement;
       if (fileInput) fileInput.value = "";
     } catch (error) {

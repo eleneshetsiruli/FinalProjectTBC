@@ -3,7 +3,7 @@ import supabase from "@/lib/supabase";
 export const fetchHotels = async (
   page: number,
   limit: number,
-  country: string
+  country: string,
 ) => {
   const offset = (page - 1) * limit;
 

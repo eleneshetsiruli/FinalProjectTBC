@@ -10,7 +10,7 @@ export const PriceRangeSlider = ({
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
-    index: number
+    index: number,
   ) => {
     const value = Number(event.target.value);
     const newRange: [number, number] =
