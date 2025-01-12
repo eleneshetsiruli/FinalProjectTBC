@@ -43,7 +43,7 @@ const buttonStyles = cva(
       rounded: "md",
       height: "custom",
     },
-  }
+  },
 );
 
 const ButtonCva: React.FC<ButtonProps> = ({
