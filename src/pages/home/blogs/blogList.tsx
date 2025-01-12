@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { CountryImg } from "../countries/countryImg";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { Loading } from "@/pages/isLoading";
+import { useTranslation } from "react-i18next";
 
 const BlogList: React.FC = () => {
   const { data: blogs, isLoading } = useFetchBlogs();
-  const navigate = useNavigate(); // Initialize useNavigate
-
+  const navigate = useNavigate();
+  const { t } = useTranslation();
   if (isLoading) {
     return <Loading />;
   }
@@ -19,12 +20,12 @@ const BlogList: React.FC = () => {
 
   return (
     <div className=" flex flex-col gap-2 justify-center items-center mt-14">
-      <h1 className="text-card text-lg">Blogs</h1>
+      <h1 className="text-card text-lg"> {t("home-page.blogs")}</h1>
       <div className="flex justify-center flex-wrap lg:w-[1000px] gap-5">
         {blogs?.map((blog: any) => (
           <div
             className="flex flex-col cursor-pointer"
-            key={blog.blogId}
+            key={blog.id}
             onClick={() => handleNavigate(blog.id)}
           >
             <CountryImg src={blog.image_url} />

@@ -1,19 +1,19 @@
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
+import homePageKa from "./ka/pages/home.json";
+import homePageEn from "./en/pages/home.json";
 
 i18n.use(initReactI18next).init({
   resources: {
     ka: {
-      translation: { Welcome: "გამარკობა" },
+      translation: { "home-page": homePageKa },
     },
     en: {
-      translation: {
-        Welcome: "Welcome to React and react-i18next",
-      },
+      translation: { "home-page": homePageEn },
     },
   },
-  fallbackLng: "en", // Set a fallback language
+  fallbackLng: "en",
   interpolation: {
-    escapeValue: false, // Not needed for React
+    escapeValue: false,
   },
 });

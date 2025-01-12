@@ -10,18 +10,19 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { Dicebear } from "./diceBear";
+import { useTranslation } from "react-i18next";
 
 export const User = () => {
   const logout = useLogout();
   const userSession = localStorage.getItem("user");
   const parsedSession = userSession ? JSON.parse(userSession) : null;
   const userEmail = parsedSession?.user?.email;
-
+  const { t } = useTranslation();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
         {userSession ? (
-          <div className="flex items-center gap-2 hover:text-card">
+          <div className="flex items-center gap-2 hover:text-card ">
             <h1>{userEmail?.split("@")[0]}</h1>
             <Dicebear />
           </div>
@@ -37,17 +38,23 @@ export const User = () => {
 
         {!userSession ? (
           <>
-            <UserMenuItem item="Sign in" path={pageEnums.LOGIN} />
-            <UserMenuItem item="Sign up" path={pageEnums.SIGNUP} />
+            <UserMenuItem item={t("home-page.signIn")} path={pageEnums.LOGIN} />
+            <UserMenuItem
+              item={t("home-page.signUp")}
+              path={pageEnums.SIGNUP}
+            />
           </>
         ) : (
           <>
             <UserMenuItem
               onClick={logout}
-              item="Sign out"
+              item={t("home-page.signOut")}
               path={pageEnums.HOME}
             />
-            <UserMenuItem item="Profile info" path={pageEnums.PROFILE} />
+            <UserMenuItem
+              item={t("home-page.profile")}
+              path={pageEnums.PROFILE}
+            />
           </>
         )}
       </DropdownMenuContent>

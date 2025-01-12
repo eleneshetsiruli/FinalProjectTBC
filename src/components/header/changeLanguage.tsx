@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
-
+  const { t } = useTranslation();
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
   };
@@ -20,11 +20,12 @@ const LanguageSwitcher = () => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          Lang <FontAwesomeIcon icon={faCaretDown} />
+          {t("home-page.lang_version")} <FontAwesomeIcon icon={faCaretDown} />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuSeparator />
           <DropdownMenuItem
+            className="hover:text-card cursor-pointer"
             onClick={() => {
               changeLanguage("en");
             }}
@@ -32,6 +33,7 @@ const LanguageSwitcher = () => {
             English
           </DropdownMenuItem>
           <DropdownMenuItem
+            className="hover:text-card cursor-pointer"
             onClick={() => {
               changeLanguage("ka");
             }}
