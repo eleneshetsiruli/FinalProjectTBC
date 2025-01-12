@@ -9,8 +9,10 @@ import { IFormInput } from "../types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "../zod";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
+import { useTranslation } from "react-i18next";
 
 export const ContactForm = () => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -27,19 +29,20 @@ export const ContactForm = () => {
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <Label>Your email address</Label>
+        <Label>{t("about-page.yourEmail")}</Label>
         <Input type="email" className="w-[300px]" {...register("email")} />
         {errors.email && <ParagrCva>{errors.email.message}</ParagrCva>}
       </div>
 
       <div>
-        <Label>Your question</Label>
+        <Label>{t("about-page.question")}</Label>
         <Textarea className="w-[300px]" {...register("question")} />
         {errors.question && <ParagrCva>{errors.question.message}</ParagrCva>}
       </div>
 
       <ButtonCva size="l" type="submit">
-        Send <FontAwesomeIcon className="ml-2" icon={faPaperPlane} />
+        {t("about-page.send")}
+        <FontAwesomeIcon className="ml-2" icon={faPaperPlane} />
       </ButtonCva>
     </form>
   );
