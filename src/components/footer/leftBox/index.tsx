@@ -2,16 +2,18 @@ import { Logo } from "@/components/header/logo";
 import { FooterMinBox } from "../footerMinBox";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { Icons } from "../icnos";
+import { useTranslation } from "react-i18next";
 
 export const LeftBox = () => {
+  const { t } = useTranslation();
   return (
     <FooterMinBox>
       <Logo size="w-[200px] cursor-pointer" />
       <ParagrCva size="wid200" color="secondary">
-        Travel agency which helps you to plan your perfect holidays
+        {t("footer-page.travel")}
       </ParagrCva>
       <ParagrCva size="text30" color="secondary">
-        Follow us
+        {t("footer-page.follow")}
       </ParagrCva>
       <Icons />
     </FooterMinBox>

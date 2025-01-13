@@ -1,12 +1,14 @@
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { FooterMinBox } from "../footerMinBox";
+import { useTranslation } from "react-i18next";
 
 export const RightBox = () => {
-  const titles = ["exploreera@gmail.com", "555111222", "Subscribe news"];
+  const { t } = useTranslation();
+  const titles = ["exploreera@gmail.com", "555111222", t("footer-page.sub")];
   return (
     <FooterMinBox>
       <ParagrCva color="secondary" size="text30">
-        Contact us
+        {t("footer-page.contact")}
       </ParagrCva>
       {titles.map((title, i) => {
         return (

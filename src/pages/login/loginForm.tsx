@@ -1,10 +1,10 @@
-import { LabelCva } from "@/components/ui/cva/formField/label";
 import { LoginFormData, LoginFormProps } from "./interfaces";
 import InputCva from "@/components/ui/cva/formField/input";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 import ButtonCva from "@/components/ui/cva/button";
 import { useFormContext } from "react-hook-form";
 import { InputLabelBox } from "../../components/ui/inputLabelBox";
+import { Label } from "@/components/ui/label";
 
 const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const methods = useFormContext<LoginFormData>();
@@ -15,7 +15,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
       onSubmit={methods.handleSubmit(onSubmit)}
     >
       <InputLabelBox>
-        <LabelCva>Email</LabelCva>
+        <Label>Email</Label>
         <InputCva
           placeholder="Enter your email address"
           type="email"
@@ -27,7 +27,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
       </InputLabelBox>
 
       <InputLabelBox>
-        <LabelCva>Password</LabelCva>
+        <Label>Password</Label>
         <InputCva
           placeholder="Enter your password"
           {...methods.register("password")}

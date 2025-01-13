@@ -2,20 +2,22 @@ import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { FooterMinBox } from "../footerMinBox";
 import { Link } from "react-router-dom";
 import { pageEnums } from "@/pages/enums/pageEnums";
+import { useTranslation } from "react-i18next";
 
 export const MiddleBox = () => {
+  const { t } = useTranslation();
   const links = [
-    { label: "Home", to: pageEnums.HOME },
-    { label: "Login", to: pageEnums.LOGIN },
-    { label: "Sign Up", to: pageEnums.SIGNUP },
-    { label: "About Us", to: pageEnums.ABOUT },
-    { label: "Blogs", to: pageEnums.BLOGS },
+    { label: t("footer-page.home"), to: pageEnums.HOME },
+    { label: t("footer-page.login"), to: pageEnums.LOGIN },
+    { label: t("footer-page.signUp"), to: pageEnums.SIGNUP },
+    { label: t("footer-page.about"), to: pageEnums.ABOUT },
+    { label: t("footer-page.blogs"), to: pageEnums.BLOGS },
   ];
 
   return (
     <FooterMinBox>
       <ParagrCva size="text30" color="secondary">
-        Links
+        {t("footer-page.links")}
       </ParagrCva>
 
       <div className="flex flex-col gap-2">

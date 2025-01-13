@@ -7,7 +7,7 @@ export const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
         <svg
           key={index}
           xmlns="http://www.w3.org/2000/svg"
-          fill={index < rating ? "#FB923C" : "#E5E7EB"}
+          fill={index < Number(rating) ? "#FB923C" : "#E5E7EB"}
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"

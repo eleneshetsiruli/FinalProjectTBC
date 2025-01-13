@@ -1,16 +1,18 @@
 import { pageEnums } from "@/pages/enums/pageEnums";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export const AddBlogComponent = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex justify-center items-center gap-4 m-10 p-3 bg-gradient-to-r  rounded-lg ">
       <Link
         to={pageEnums.ADDBLOG}
         className="text-xl font-extrabold italic tracking-wide drop-shadow-md"
       >
-        Add Blog
+        {t("blog-page.add")}
       </Link>
       <Link
         to={pageEnums.ADDBLOG}
