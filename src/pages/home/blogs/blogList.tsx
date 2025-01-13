@@ -9,11 +9,14 @@ import { useTranslation } from "react-i18next";
 const BlogList: React.FC = () => {
   const { data: blogs, isLoading } = useFetchBlogs();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
   if (isLoading) {
     return <Loading />;
   }
-
+  const getLocalizedField = (blog: any, field: string) => {
+    return i18n.language === "ka" ? blog[`${field}_ka`] : blog[`${field}_en`];
+  };
   const handleNavigate = (blogId: string) => {
     navigate(`/blog/${blogId}`);
   };
@@ -29,7 +32,9 @@ const BlogList: React.FC = () => {
             onClick={() => handleNavigate(blog.id)}
           >
             <CountryImg src={blog.image_url} />
-            <ParagrCva color="secondary">{blog.title_en}</ParagrCva>
+            <ParagrCva color="secondary">
+              {getLocalizedField(blog, "title")}
+            </ParagrCva>
           </div>
         ))}
       </div>

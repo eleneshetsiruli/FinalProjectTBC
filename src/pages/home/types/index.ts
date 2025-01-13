@@ -3,5 +3,11 @@ export interface CountryImgProps {
 }
 
 export interface SimpleSliderProps {
-  countries: { id: string; name: string; price: number; image: string }[];
+  countries: {
+    id: string;
+    name: string;
+    price: number;
+    image: string;
+    name_ka: string;
+  }[];
 }

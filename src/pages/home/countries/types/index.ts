@@ -3,6 +3,7 @@ export interface Country {
   name: string;
   image: string;
   price: number;
+  name_ka: string;
 }
 
 export interface SingleCountryProps {
