@@ -4,11 +4,13 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Input } from "@/components/ui/input";
 import { useNavigate, useLocation } from "react-router-dom";
 import { SearchProps } from "./types";
+import { useTranslation } from "react-i18next";
 
 const Search = ({ onSearchChange }: SearchProps) => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
@@ -31,7 +33,7 @@ const Search = ({ onSearchChange }: SearchProps) => {
     <div className="relative">
       <Input
         type="text"
-        placeholder="Search for a country..."
+        placeholder={t("countries-page.search")}
         value={searchTerm}
         onChange={handleSearchChange}
         className="w-[300px] h-12 pl-4 pr-12 border border-gray-300 rounded-md"

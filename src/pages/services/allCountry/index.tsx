@@ -26,7 +26,7 @@ export const AllCountry = () => {
       (country) =>
         country.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
         country.price >= priceRange[0] &&
-        country.price <= priceRange[1],
+        country.price <= priceRange[1]
     )
     .sort((a, b) => {
       if (sortOrder === "low-to-high") {
@@ -51,7 +51,6 @@ export const AllCountry = () => {
         isFetching={isFetching}
         countries={filteredCountries || []}
       />
-      x
     </>
   );
 };

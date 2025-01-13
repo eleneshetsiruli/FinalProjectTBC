@@ -12,6 +12,12 @@ import blogPageEn from "./en/pages/blog.json";
 import footerPageKa from "./ka/pages/footer.json";
 import footerPageEn from "./en/pages/footer.json";
 
+import addBlogPageKa from "./ka/pages/addBlog.json";
+import addBlogPageEn from "./en/pages/addBlog.json";
+
+import countriesPageKa from "./ka/pages/countries.json";
+import countriesPageEn from "./en/pages/countries.json";
+
 i18n.use(initReactI18next).init({
   resources: {
     ka: {
@@ -20,6 +26,8 @@ i18n.use(initReactI18next).init({
         "about-page": aboutPageKa,
         "blog-page": blogPageKa,
         "footer-page": footerPageKa,
+        "addBlog-page": addBlogPageKa,
+        "countries-page": countriesPageKa,
       },
     },
     en: {
@@ -28,6 +36,8 @@ i18n.use(initReactI18next).init({
         "about-page": aboutPageEn,
         "blog-page": blogPageEn,
         "footer-page": footerPageEn,
+        "addBlog-page": addBlogPageEn,
+        "countries-page": countriesPageEn,
       },
     },
   },

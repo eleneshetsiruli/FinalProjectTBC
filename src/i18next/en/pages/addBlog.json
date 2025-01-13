@@ -1,0 +1,13 @@
+{
+  "add": "Add a New Blog",
+  "titleGe": "Title (Georgian)",
+  "enterGe": "Enter title in Georgia",
+  "titleEn": "Title (English)",
+  "enterEn": "Enter title in English",
+  "descriptionKa": "Description (Georgian)",
+  "enterDes": "Enter description in Georgia",
+  "descriptionEn": "Description (English)",
+  "enterDesEn": "Enter description in English",
+  "image": "Image (Upload)",
+  "AddBlog": "Add Blog"
+}

@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/useToast/use-toast";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const AddBlog = () => {
   const [formData, setFormData] = useState({
@@ -18,8 +19,10 @@ export const AddBlog = () => {
 
   const { message, loading, handleFileUpload } = useAddBlog();
 
+  const { t } = useTranslation();
+
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -44,7 +47,7 @@ export const AddBlog = () => {
         title: "Succses",
         description: "your blog add succses",
       });
-      // Clear the form inputs after successful submission
+
       setFormData({
         title_ka: "",
         title_en: "",
@@ -54,9 +57,8 @@ export const AddBlog = () => {
       });
       setFile(null);
 
-      // Optionally, clear the file input field
       const fileInput = document.getElementById(
-        "image_url",
+        "image_url"
       ) as HTMLInputElement;
       if (fileInput) fileInput.value = "";
     } catch (error) {
@@ -67,7 +69,7 @@ export const AddBlog = () => {
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold text-orange-600 mb-4">
-        Add a New Blog
+        {t("addBlog-page.add")}
       </h1>
       {message && (
         <p
@@ -84,7 +86,7 @@ export const AddBlog = () => {
             htmlFor="title_ka"
             className="block font-semibold mb-1 text-gray-600"
           >
-            Title (Georgian)
+            {t("addBlog-page.titleGe")}
           </Label>
           <Input
             type="text"
@@ -92,7 +94,7 @@ export const AddBlog = () => {
             name="title_ka"
             value={formData.title_ka}
             onChange={handleInputChange}
-            placeholder="Enter title in Georgian"
+            placeholder={t("addBlog-page.enterGe")}
             className="w-full p-2 border border-gray-300 rounded"
             required
           />
@@ -103,7 +105,7 @@ export const AddBlog = () => {
             htmlFor="title_en"
             className="block font-semibold mb-1 text-gray-600"
           >
-            Title (English)
+            {t("addBlog-page.titleEn")}
           </Label>
           <Input
             type="text"
@@ -111,7 +113,7 @@ export const AddBlog = () => {
             name="title_en"
             value={formData.title_en}
             onChange={handleInputChange}
-            placeholder="Enter title in English"
+            placeholder={t("addBlog-page.enterEn")}
             className="w-full p-2 border border-gray-300 rounded"
             required
           />
@@ -122,14 +124,14 @@ export const AddBlog = () => {
             htmlFor="description_ka"
             className="block font-semibold mb-1 text-gray-600"
           >
-            Description (Georgian)
+            {t("addBlog-page.descriptionKa")}
           </Label>
           <Textarea
             id="description_ka"
             name="description_ka"
             value={formData.description_ka}
             onChange={handleInputChange}
-            placeholder="Enter description in Georgian"
+            placeholder={t("addBlog-page.enterDes")}
             className="w-full p-2 border border-gray-300 rounded"
             rows={4}
             required
@@ -141,14 +143,14 @@ export const AddBlog = () => {
             htmlFor="description_en"
             className="block font-semibold mb-1 text-gray-600"
           >
-            Description (English)
+            {t("addBlog-page.descriptionEn")}
           </Label>
           <Textarea
             id="description_en"
             name="description_en"
             value={formData.description_en}
             onChange={handleInputChange}
-            placeholder="Enter description in English"
+            placeholder={t("addBlog-page.enterDesEn")}
             className="w-full p-2 border border-gray-300 rounded"
             rows={4}
             required
@@ -160,7 +162,7 @@ export const AddBlog = () => {
             htmlFor="image_url"
             className="block font-semibold mb-1 text-gray-600"
           >
-            Image (Upload)
+            {t("addBlog-page.image")}
           </Label>
           <Input
             type="file"
@@ -179,7 +181,7 @@ export const AddBlog = () => {
           }`}
           disabled={loading}
         >
-          {loading ? "Adding Blog..." : "Add Blog"}
+          {loading ? "Adding Blog..." : t("addBlog-page.image")}
         </Button>
       </form>
     </div>
