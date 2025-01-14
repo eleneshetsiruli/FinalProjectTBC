@@ -1,0 +1,11 @@
+{
+  "username": "Username",
+  "fullNameEn": "Full Name (English)",
+  "fullNameKa": "Full Name (Georgian)",
+  "lastNameEn": "Last Name (English)",
+  "lastNameKa": "Last Name (Georgian)",
+  "telephone": "Telephone",
+  "edit": "Edit Profile",
+  "save": "Save",
+  "Cancel": "Cancel"
+}

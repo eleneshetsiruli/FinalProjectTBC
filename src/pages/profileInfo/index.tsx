@@ -5,6 +5,7 @@ import { EditProfileForm } from "./editProfileForm";
 import { Button } from "./editInfoButtons";
 import { Loading } from "../isLoading";
 import { ProfileContainer } from "./profileContainer";
+import { useTranslation } from "react-i18next";
 
 export const ProfileView = () => {
   const { data: profile, isLoading, refetch } = useProfile();
@@ -15,6 +16,7 @@ export const ProfileView = () => {
     handleChange,
     handleSave,
   } = useProfileEdit(profile);
+  const { t } = useTranslation();
 
   const handleSaveAndRefetch = async () => {
     if (!updatedProfile) return;
@@ -52,7 +54,7 @@ export const ProfileView = () => {
     }
     return (
       <Button onClick={() => setIsEditMode(true)} className="bg-blue-500">
-        Edit Profile
+        {t("profile-page.edit")}
       </Button>
     );
   };

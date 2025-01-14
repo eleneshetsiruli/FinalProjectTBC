@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { ProfileContentProps } from "./types";
 
 const ProfileDetail = ({ label, value }: { label: string; value: string }) => (
@@ -9,14 +10,16 @@ const ProfileDetail = ({ label, value }: { label: string; value: string }) => (
 );
 
 export const ProfileContent = ({ profile }: ProfileContentProps) => {
+  const { t } = useTranslation();
   if (!profile) return <p>No profile available</p>;
+
   const profileFields = [
-    { label: "Username", value: profile.username },
-    { label: "Full Name (English)", value: profile.full_name_en },
-    { label: "Full Name (Georgian)", value: profile.full_name_ka },
-    { label: "Last Name (English)", value: profile.last_name_en },
-    { label: "Last Name (Georgian)", value: profile.last_name_ka },
-    { label: "Telephone", value: profile.telephone },
+    { label: t("profile-page.username"), value: profile.username },
+    { label: t("profile-page.fullNameEn"), value: profile.full_name_en },
+    { label: t("profile-page.fullNameKa"), value: profile.full_name_ka },
+    { label: t("profile-page.lastNameEn"), value: profile.last_name_en },
+    { label: t("profile-page.lastNameKa"), value: profile.last_name_ka },
+    { label: t("profile-page.telephone"), value: profile.telephone },
   ];
 
   return (
