@@ -28,7 +28,7 @@ export const FlightsView: React.FC = () => {
         toast({
           title: error.message,
           variant: "destructive",
-        }),
+        })
       );
       return;
     }

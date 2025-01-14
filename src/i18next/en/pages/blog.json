@@ -3,5 +3,9 @@
   "more": "See more",
   "less": "See less",
   "created": "Created",
-  "load": "Load more blogs"
+  "load": "Load more blogs",
+  "book": "Book now",
+  "page": "Page",
+  "prev": "Previous",
+  "next": "Next"
 }

@@ -1,6 +1,21 @@
 {
-  "search": "Search for a country",
+  "countries": {
+    "Argentina": "Argentina",
+    "Georgia": "Georgia",
+    "Ukraine": "Ukraine",
+    "India": "India",
+    "Switzerland": "Switzerland",
+    "Italy": "Italy",
+    "Canada": "Canada",
+    "Egypt": "Egypt",
+    "Brazil": "Brazil",
+    "Belgium": "Belgium",
+    "Greece": "Greece",
+    "France": "France"
+  },
+  "searhching": "Find hotel by Country",
   "select": "Select a price",
   "low": "Low to hight",
-  "hight": "Hight to low"
+  "hight": "Hight to low",
+  "find": "Find hotel by Country"
 }

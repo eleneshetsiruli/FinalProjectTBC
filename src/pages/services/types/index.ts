@@ -21,5 +21,13 @@ export interface SearchAndFilterProps {
 export interface CountryListProps {
   isLoading: boolean;
   isFetching: boolean;
-  countries: Array<{ id: string; name: string; price: number; image: string }>;
+  countries: Array<{
+    id: string;
+    name: string;
+    price: number;
+    image: string;
+    description_ka: string;
+    description_en: string;
+    name_ka: string;
+  }>;
 }

@@ -31,6 +31,8 @@ export interface HotelCardProps {
     image: string;
     rating: string;
     price: string;
+    name_ka: string;
+    description_ka: string;
   };
 }
 
@@ -39,8 +41,10 @@ export interface HotelListProps {
     id: string;
     name_en: string;
     description_en: string;
+    description_ka: string;
     image: string;
     rating: string;
     price: string;
+    name_ka: string;
   }[];
 }

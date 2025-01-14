@@ -5,6 +5,7 @@ import HotelList from "./components/hotelList";
 import Pagination from "./components/pagination";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const HotelsView = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -17,6 +18,7 @@ export const HotelsView = () => {
     useState<string>(countryFromUrl);
 
   const limit = 3;
+  const { t } = useTranslation();
 
   const {
     data: hotels,
@@ -52,11 +54,16 @@ export const HotelsView = () => {
   if (isLoading) return <p>Loading...</p>;
   if (error instanceof Error) return <p>{error.message}</p>;
 
+  const translatedList = countryList.map((country) => ({
+    value: country.value,
+    label: t(`countries-page.countries.${country.value}`),
+  }));
+
   return (
     <div className="p-6 space-y-6">
       <ComboboxDemo
-        select="Find hotel by Country"
-        list={countryList}
+        select={t("countries-page.searhching")}
+        list={translatedList}
         value={selectedCountry}
         onChange={handleCountryChange}
       />

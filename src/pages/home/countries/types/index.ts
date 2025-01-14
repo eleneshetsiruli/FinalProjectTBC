@@ -4,6 +4,8 @@ export interface Country {
   image: string;
   price: number;
   name_ka: string;
+  description_ka: string;
+  description_en: string;
 }
 
 export interface SingleCountryProps {

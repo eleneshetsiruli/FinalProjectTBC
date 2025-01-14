@@ -1,5 +1,6 @@
 import React from "react";
 import { PaginationProps } from "../types";
+import { useTranslation } from "react-i18next";
 
 const Pagination: React.FC<PaginationProps> = ({
   page,
@@ -7,6 +8,7 @@ const Pagination: React.FC<PaginationProps> = ({
   onPrevious,
   isNextDisabled,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="flex justify-center items-center space-x-4">
       <button
@@ -16,9 +18,11 @@ const Pagination: React.FC<PaginationProps> = ({
           page === 1 ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"
         }`}
       >
-        Previous
+        {t("blog-page.prev")}
       </button>
-      <span className="text-gray-700 font-medium">Page {page}</span>
+      <span className="text-gray-700 font-medium">
+        {t("blog-page.page")} {page}
+      </span>
       <button
         onClick={onNext}
         disabled={isNextDisabled}
@@ -26,7 +30,7 @@ const Pagination: React.FC<PaginationProps> = ({
           isNextDisabled ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"
         }`}
       >
-        Next
+        {t("blog-page.next")}
       </button>
     </div>
   );
