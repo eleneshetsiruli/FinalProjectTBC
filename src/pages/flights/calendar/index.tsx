@@ -39,7 +39,7 @@ export function CalendarForm({ label, value, onChange }: CalendarFormProps) {
                       variant={"outline"}
                       className={cn(
                         "w-[240px] pl-3 text-left font-normal",
-                        !value && "text-muted-foreground"
+                        !value && "text-muted-foreground",
                       )}
                     >
                       {value ? (
