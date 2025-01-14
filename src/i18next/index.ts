@@ -18,6 +18,9 @@ import addBlogPageEn from "./en/pages/addBlog.json";
 import countriesPageKa from "./ka/pages/countries.json";
 import countriesPageEn from "./en/pages/countries.json";
 
+import flightsPageKa from "./ka/pages/flights.json";
+import flightsPageEn from "./en/pages/flights.json";
+
 i18n.use(initReactI18next).init({
   resources: {
     ka: {
@@ -28,6 +31,7 @@ i18n.use(initReactI18next).init({
         "footer-page": footerPageKa,
         "addBlog-page": addBlogPageKa,
         "countries-page": countriesPageKa,
+        "flights-page": flightsPageKa,
       },
     },
     en: {
@@ -38,6 +42,7 @@ i18n.use(initReactI18next).init({
         "footer-page": footerPageEn,
         "addBlog-page": addBlogPageEn,
         "countries-page": countriesPageEn,
+        "flights-page": flightsPageEn,
       },
     },
   },

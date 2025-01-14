@@ -17,5 +17,6 @@
   "select": "Select a price",
   "low": "Low to hight",
   "hight": "Hight to low",
-  "find": "Find hotel by Country"
+  "find": "Find hotel by Country",
+  "search": "Find Country"
 }

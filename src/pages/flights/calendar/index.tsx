@@ -18,10 +18,11 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { CalendarFormProps } from "../types";
+import { useTranslation } from "react-i18next";
 
 export function CalendarForm({ label, value, onChange }: CalendarFormProps) {
   const form = useForm();
-
+  const { t } = useTranslation();
   return (
     <Form {...form}>
       <form className="space-y-8">
@@ -38,13 +39,13 @@ export function CalendarForm({ label, value, onChange }: CalendarFormProps) {
                       variant={"outline"}
                       className={cn(
                         "w-[240px] pl-3 text-left font-normal",
-                        !value && "text-muted-foreground",
+                        !value && "text-muted-foreground"
                       )}
                     >
                       {value ? (
                         format(new Date(value), "PPP")
                       ) : (
-                        <span>Pick a date</span>
+                        <span>{t("flights-page.date")}</span>
                       )}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>

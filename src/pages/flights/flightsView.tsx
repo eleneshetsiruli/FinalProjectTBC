@@ -7,12 +7,14 @@ import { Passenger } from "./passenger";
 import { countryList } from "./staticData";
 import { useState } from "react";
 import { flightRequestSchema } from "./zod";
+import { useTranslation } from "react-i18next";
 
 export const FlightsView: React.FC = () => {
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [departureDate, setDepartureDate] = useState<string>("");
   const [arrivalDate, setArrivalDate] = useState<string>("");
   const [pessengers, setPessengers] = useState<string>("");
+  const { t } = useTranslation();
 
   const handleSubmit = () => {
     const result = flightRequestSchema.safeParse({
@@ -44,28 +46,33 @@ export const FlightsView: React.FC = () => {
     setPessengers("");
   };
 
+  const translatedList = countryList.map((country) => ({
+    value: country.value,
+    label: t(`countries-page.countries.${country.value}`),
+  }));
+
   return (
     <Background>
       <OptionsComponent
-        title="TAKE OFF"
+        title={t("flights-page.take")}
         result={
           <ComboboxDemo
-            select="choose"
-            list={countryList}
+            select={t("flights-page.choose")}
+            list={translatedList}
             value={selectedCountry}
             onChange={setSelectedCountry}
           />
         }
       />
       <CalendarForm
-        label="DEPARTURE"
+        label={t("flights-page.departure")}
         value={departureDate}
         onChange={setDepartureDate}
       />
       <CalendarForm
         value={arrivalDate}
         onChange={setArrivalDate}
-        label="ARRIVE"
+        label={t("flights-page.arrive")}
       />
       <Passenger value={pessengers} onChange={setPessengers} />
       <button
@@ -73,7 +80,7 @@ export const FlightsView: React.FC = () => {
         type="submit"
         className="bg-card rounded-sm p-2 self-auto mt-6 text-white text-sm hover:bg-gray-600"
       >
-        REQUEST
+        {t("flights-page.request")}
       </button>
     </Background>
   );

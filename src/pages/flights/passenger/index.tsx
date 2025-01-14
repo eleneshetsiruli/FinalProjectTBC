@@ -6,14 +6,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { PassengerProps } from "../types";
+import { useTranslation } from "react-i18next";
 
 export const Passenger: React.FC<PassengerProps> = ({ value, onChange }) => {
+  const { t } = useTranslation();
   return (
     <div className="gap-1 flex flex-col">
-      <h1 className="font-bold">Passengers</h1>
+      <h1 className="font-bold">{t("flights-page.passengers")}</h1>
       <Select value={value} onValueChange={onChange}>
         <SelectTrigger className="w-[240px]">
-          <SelectValue placeholder="Passengers" />
+          <SelectValue placeholder={t("flights-page.passengers")} />
         </SelectTrigger>
         <SelectContent>
           {Array.from({ length: 5 }).map((_, index) => (
