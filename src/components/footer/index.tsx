@@ -12,7 +12,7 @@ export const Footer = () => {
 
   return (
     <div
-      className={`bg-[#e4e3e3] lg:flex-row p-10 flex flex-col gap-7 lg:justify-around lg:items-baseline ${
+      className={`border-t border-gray-500 mt-10 text-popover-foreground bg-beckground lg:flex-row p-10 flex flex-col gap-7 lg:justify-around lg:items-baseline ${
         isFlightsPage ? "mt-0" : "mt-24"
       }`}
     >

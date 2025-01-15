@@ -7,15 +7,11 @@ export const RightBox = () => {
   const titles = ["exploreera@gmail.com", "555111222", t("footer-page.sub")];
   return (
     <FooterMinBox>
-      <ParagrCva color="secondary" size="text30">
+      <ParagrCva color="def" size="text30">
         {t("footer-page.contact")}
       </ParagrCva>
       {titles.map((title, i) => {
-        return (
-          <ParagrCva color="secondary" key={i}>
-            {title}
-          </ParagrCva>
-        );
+        return <ParagrCva key={i}>{title}</ParagrCva>;
       })}
     </FooterMinBox>
   );

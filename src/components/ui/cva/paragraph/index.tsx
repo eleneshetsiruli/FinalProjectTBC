@@ -6,7 +6,7 @@ const paragraphStyles = cva("text-base text-gray-700 ", {
     color: {
       primary: "text-muted",
       secondary: "text-gray-400",
-      def: "text-white",
+      def: "text-popover-foreground",
       green: "text-green-700",
       orange: "text-orange-600",
     },

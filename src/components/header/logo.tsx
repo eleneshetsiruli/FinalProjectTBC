@@ -6,7 +6,7 @@ import { pageEnums } from "@/pages/enums/pageEnums";
 
 export const Logo = ({ size }: LogoProps) => {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === pageEnums.HOME;
   const navigate = useNavigate();
 
   const handelGoHome = () => {

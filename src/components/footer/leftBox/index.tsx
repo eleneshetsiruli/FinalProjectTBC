@@ -9,12 +9,8 @@ export const LeftBox = () => {
   return (
     <FooterMinBox>
       <Logo size="w-[200px] cursor-pointer" />
-      <ParagrCva size="wid200" color="secondary">
-        {t("footer-page.travel")}
-      </ParagrCva>
-      <ParagrCva size="text30" color="secondary">
-        {t("footer-page.follow")}
-      </ParagrCva>
+      <ParagrCva size="wid200">{t("footer-page.travel")}</ParagrCva>
+      <ParagrCva size="text30">{t("footer-page.follow")}</ParagrCva>
       <Icons />
     </FooterMinBox>
   );

@@ -1,3 +1,4 @@
+import { pageEnums } from "@/pages/enums/pageEnums";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,7 +19,7 @@ const LanguageSwitcher = () => {
     i18n.changeLanguage(lang);
   };
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === pageEnums.HOME;
   const commonClasses = `hover:text-foreground cursor-pointer focus:outline-none focus:ring-0 ${isHomePage ? "text-popover" : "text-muted"}`;
   return (
     <>

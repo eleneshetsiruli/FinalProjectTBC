@@ -16,14 +16,14 @@ export const MiddleBox = () => {
 
   return (
     <FooterMinBox>
-      <ParagrCva size="text30" color="secondary">
+      <ParagrCva color="def" size="text30">
         {t("footer-page.links")}
       </ParagrCva>
 
       <div className="flex flex-col gap-2">
         {links.map(({ label, to }, i) => (
           <Link key={i} to={to}>
-            <ParagrCva color="secondary">{label}</ParagrCva>
+            <ParagrCva>{label}</ParagrCva>
           </Link>
         ))}
       </div>

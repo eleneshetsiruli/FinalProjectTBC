@@ -4,10 +4,11 @@ import { NavLinks } from "./navLinks";
 import { useLocation } from "react-router-dom";
 import LanguageSwitcher from "./changeLanguage";
 import { Theme } from "./theme";
+import { pageEnums } from "@/pages/enums/pageEnums";
 
 export const Header = () => {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === pageEnums.HOME;
 
   return (
     <div

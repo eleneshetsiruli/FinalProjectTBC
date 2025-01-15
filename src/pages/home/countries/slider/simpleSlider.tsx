@@ -1,6 +1,5 @@
 import Slider from "react-slick";
 import { SimpleSliderProps } from "../../types";
-
 import { settings } from "./sliderSettings";
 import { SingleCountry } from "../singleCountry.tsx";
 import { useTranslation } from "react-i18next";
