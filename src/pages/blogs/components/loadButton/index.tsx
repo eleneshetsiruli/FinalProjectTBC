@@ -8,7 +8,7 @@ export const LoadButton: React.FC<LoadButtonProps> = ({ handleLoadMore }) => {
   return (
     <button
       onClick={handleLoadMore}
-      className="flex items-center justify-center gap-2 px-4 py-2 bg-card text-white rounded hover:bg-secondary border-2 hover:text-card"
+      className="flex items-center justify-center gap-2 px-4 py-2 bg-card text-white rounded hover:bg-secondary border-2 hover:text-orange-500"
     >
       <span>{t("blog-page.load")}</span>
       <FontAwesomeIcon icon={faSpinner} />

@@ -5,10 +5,12 @@ export const Office = () => {
   const { t } = useTranslation();
   return (
     <>
-      <h3>{t("about-page.office")}</h3>
-      <ParagrCva color="secondary" size="wid300">
+      <h3 className="text-popover-foreground">{t("about-page.office")}</h3>
+      <ParagrCva color="primary" size="wid300">
         {t("about-page.visit")}
-        <strong className="text-card ml-1 mr-1">ExploreEra</strong>
+        <strong className="text-popover-foreground ml-1 mr-1">
+          ExploreEra
+        </strong>
         {t("about-page.adress")}
       </ParagrCva>
     </>

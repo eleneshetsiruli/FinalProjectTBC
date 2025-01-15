@@ -23,7 +23,7 @@ export const User = () => {
       <DropdownMenuTrigger>
         {userSession ? (
           <div className="flex items-center gap-2 hover:text-card ">
-            <h1>{userEmail?.split("@")[0]}</h1>
+            <h1 className="text-orange-500">{userEmail?.split("@")[0]}</h1>
             <Dicebear />
           </div>
         ) : (

@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import cover from "@/assets/svgs/cover.png";
-import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 
@@ -22,14 +21,16 @@ export const Cover: React.FC = () => {
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-70"></div>
       <div className="text-center lg:w-[150px] absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <ParagrCva size="lg" color="def">
-          {t("home-page.offer")}
-        </ParagrCva>
+        <h1 className="text-white">{t("home-page.offer")}</h1>
         <h1 className="text-white font-bold text-3xl animate-bounce">
           {t("home-page.italy")}
         </h1>
 
-        <Button onClick={handleNavigate} size="sm">
+        <Button
+          className="bg-card text-popover w-32 "
+          onClick={handleNavigate}
+          size="sm"
+        >
           {t("home-page.seeOffer")}
         </Button>
       </div>

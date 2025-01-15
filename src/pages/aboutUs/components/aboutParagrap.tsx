@@ -5,7 +5,7 @@ export const AboutParagrap = () => {
   const { t } = useTranslation();
   return (
     <>
-      <ParagrCva color="secondary">{t("about-page.welcome")}</ParagrCva>
+      <ParagrCva color="def">{t("about-page.welcome")}</ParagrCva>
     </>
   );
 };

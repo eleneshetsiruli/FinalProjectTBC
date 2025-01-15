@@ -36,7 +36,7 @@ const Search = ({ onSearchChange }: SearchProps) => {
         placeholder={t("countries-page.search")}
         value={searchTerm}
         onChange={handleSearchChange}
-        className="w-[300px] h-12 pl-4 pr-12 border border-gray-300 rounded-md"
+        className="w-[300px] h-12 pl-4 pr-12 border border-gray-300 rounded-md text-popover-foreground"
       />
       <FontAwesomeIcon
         icon={faMagnifyingGlass}

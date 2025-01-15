@@ -10,7 +10,7 @@ export const AddBlogComponent = () => {
     <div className="flex justify-center items-center gap-4 m-10 p-3 bg-gradient-to-r  rounded-lg ">
       <Link
         to={pageEnums.ADDBLOG}
-        className="text-xl font-extrabold italic tracking-wide drop-shadow-md"
+        className="text-xl font-extrabold italic tracking-wide drop-shadow-md text-popover-foreground"
       >
         {t("blog-page.add")}
       </Link>

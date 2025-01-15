@@ -19,11 +19,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, isExpanded, onToggle }) => {
   return (
     <CardCva size="custom">
       <div className="flex justify-between flex-col lg:flex-row">
-        <ParagrCva color="secondary">{title}</ParagrCva>{" "}
+        <ParagrCva color="secondary">{title}</ParagrCva>
         <ParagrCva color="orange">
           <span className="italic text-primary m-2">
             {t("blog-page.created")}:
-          </span>{" "}
+          </span>
           {formattedDate}
         </ParagrCva>
       </div>
@@ -31,13 +31,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, isExpanded, onToggle }) => {
 
       <div className="flex flex-col">
         <ParagrCva color="secondary">
-          {isExpanded ? description : truncateText(description, 200)}{" "}
+          {isExpanded ? description : truncateText(description, 200)}
         </ParagrCva>
         <div
           onClick={onToggle}
           className="flex justify-center items-center text-card gap-1 cursor-pointer"
         >
-          <button className="text-card">
+          <button className="text-orange-500">
             {isExpanded ? t("blog-page.less") : t("blog-page.more")}
           </button>
           <FontAwesomeIcon icon={isExpanded ? faChevronUp : faChevronDown} />
