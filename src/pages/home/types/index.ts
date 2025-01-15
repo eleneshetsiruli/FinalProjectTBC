@@ -9,5 +9,7 @@ export interface SimpleSliderProps {
     price: number;
     image: string;
     name_ka: string;
+    description_ka: string;
+    description_en: string;
   }[];
 }

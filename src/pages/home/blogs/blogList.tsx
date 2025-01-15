@@ -32,9 +32,7 @@ const BlogList: React.FC = () => {
             onClick={() => handleNavigate(blog.id)}
           >
             <CountryImg src={blog.image_url} />
-            <ParagrCva color="secondary">
-              {getLocalizedField(blog, "title")}
-            </ParagrCva>
+            <ParagrCva>{getLocalizedField(blog, "title")}</ParagrCva>
           </div>
         ))}
       </div>

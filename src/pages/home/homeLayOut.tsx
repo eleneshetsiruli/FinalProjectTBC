@@ -4,7 +4,7 @@ import { Cover } from "./cover";
 
 export default function HomeLayOut() {
   return (
-    <div className="bg-[#e4e3e3]">
+    <div className="bg-background">
       <Cover />
       <CountriesList />
       <BlogsContainer />

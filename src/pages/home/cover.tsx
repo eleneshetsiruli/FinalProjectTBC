@@ -15,11 +15,12 @@ export const Cover: React.FC = () => {
 
   return (
     <div
-      className="h-screen bg-cover bg-center"
+      className="h-screen bg-cover bg-center "
       style={{
         backgroundImage: `url(${cover})`,
       }}
     >
+      <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-70"></div>
       <div className="text-center lg:w-[150px] absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <ParagrCva size="lg" color="def">
           {t("home-page.offer")}

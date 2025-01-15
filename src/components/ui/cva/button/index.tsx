@@ -8,7 +8,7 @@ const buttonStyles = cva(
   {
     variants: {
       variant: {
-        default: "bg-[#FF6700] text-white hover:bg-[#e65c00] ",
+        default: "bg-card text-white hover:bg-[#e65c00] ",
         outline:
           "border border-[#FF6700] text-[#FF6700] hover:bg-[#FF6700] hover:text-white",
         subtle: "bg-[#FF670033] text-[#FF6700] hover:bg-[#FF670066]",
@@ -43,7 +43,7 @@ const buttonStyles = cva(
       rounded: "md",
       height: "custom",
     },
-  },
+  }
 );
 
 const ButtonCva: React.FC<ButtonProps> = ({

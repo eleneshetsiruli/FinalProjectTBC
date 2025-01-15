@@ -4,7 +4,7 @@ import React from "react";
 const paragraphStyles = cva("text-base text-gray-700 ", {
   variants: {
     color: {
-      primary: "text-red-600",
+      primary: "text-muted",
       secondary: "text-gray-400",
       def: "text-white",
       green: "text-green-700",
