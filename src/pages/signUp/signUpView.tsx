@@ -1,11 +1,11 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import ButtonCva from "@/components/ui/cva/button";
 import CardCva from "@/components/ui/cva/card";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { FormContainer } from "@/components/ui/formContainer";
 import { SignUpFormInputs } from "./interfaces";
 import FormField from "@/components/formField/formField";
 import { useSignUp } from "@/api/query/hooks/useSignUp";
+import { Button } from "@/components/ui/button";
 
 export const SignUpView = () => {
   const {
@@ -50,7 +50,7 @@ export const SignUpView = () => {
             register={register}
             errors={errors}
           />
-          <ButtonCva type="submit">Register</ButtonCva>
+          <Button type="submit">Register</Button>
         </form>
 
         <ParagrCva color="secondary" size="sm">

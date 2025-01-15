@@ -1,10 +1,11 @@
 import { LoginFormData, LoginFormProps } from "./interfaces";
 import InputCva from "@/components/ui/cva/formField/input";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
-import ButtonCva from "@/components/ui/cva/button";
+
 import { useFormContext } from "react-hook-form";
 import { InputLabelBox } from "../../components/ui/inputLabelBox";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const methods = useFormContext<LoginFormData>();
@@ -38,7 +39,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
         )}
       </InputLabelBox>
 
-      <ButtonCva type="submit">Continue</ButtonCva>
+      <Button type="submit">Continue</Button>
     </form>
   );
 };

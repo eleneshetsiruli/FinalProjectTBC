@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import cover from "@/assets/svgs/cover.png";
-import ButtonCva from "@/components/ui/cva/button";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { useTranslation } from "react-i18next";
+import { Button } from "@/components/ui/button";
 
 export const Cover: React.FC = () => {
   const navigate = useNavigate();
@@ -29,9 +29,9 @@ export const Cover: React.FC = () => {
           {t("home-page.italy")}
         </h1>
 
-        <ButtonCva onClick={handleNavigate} size="sm">
+        <Button onClick={handleNavigate} size="sm">
           {t("home-page.seeOffer")}
-        </ButtonCva>
+        </Button>
       </div>
     </div>
   );

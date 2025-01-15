@@ -1,5 +1,4 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import ButtonCva from "@/components/ui/cva/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "../zod";
 import { ParagrCva } from "@/components/ui/cva/paragraph";
 import { useTranslation } from "react-i18next";
+import { Button } from "@/components/ui/button";
 
 export const ContactForm = () => {
   const { t } = useTranslation();
@@ -40,10 +40,10 @@ export const ContactForm = () => {
         {errors.question && <ParagrCva>{errors.question.message}</ParagrCva>}
       </div>
 
-      <ButtonCva size="l" type="submit">
+      <Button>
         {t("about-page.send")}
         <FontAwesomeIcon className="ml-2" icon={faPaperPlane} />
-      </ButtonCva>
+      </Button>
     </form>
   );
 };
