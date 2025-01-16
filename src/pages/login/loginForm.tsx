@@ -39,7 +39,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
         )}
       </InputLabelBox>
 
-      <Button type="submit">Continue</Button>
+      <Button className="bg-card text-white hover:text-popover" type="submit">
+        Continue
+      </Button>
     </form>
   );
 };

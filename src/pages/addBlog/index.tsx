@@ -176,7 +176,7 @@ export const AddBlog = () => {
 
         <Button
           type="submit"
-          className={`p-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition ${
+          className={`p-3 bg-card text-white rounded-lg font-semibold hover:bg-orange-700 transition ${
             loading ? "opacity-50 cursor-not-allowed" : ""
           }`}
           disabled={loading}

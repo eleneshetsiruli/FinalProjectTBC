@@ -20,7 +20,7 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         {t("blog-page.prev")}
       </button>
-      <span className="text-gray-700 font-medium">
+      <span className="text-popover-foreground font-medium">
         {t("blog-page.page")} {page}
       </span>
       <button

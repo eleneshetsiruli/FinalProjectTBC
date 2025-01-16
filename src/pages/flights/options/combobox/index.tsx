@@ -33,7 +33,7 @@ export function ComboboxDemo({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[240px] justify-between"
+          className="w-[240px] justify-between text-popover-foreground"
         >
           {value
             ? sortedList.find((country) => country.value === value)?.label
@@ -60,7 +60,7 @@ export function ComboboxDemo({
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      value === country.value ? "opacity-100" : "opacity-0",
+                      value === country.value ? "opacity-100" : "opacity-0"
                     )}
                   />
                   {country.label}

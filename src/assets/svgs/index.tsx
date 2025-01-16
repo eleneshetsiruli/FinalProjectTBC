@@ -28,7 +28,7 @@ export const User = () => {
           </div>
         ) : (
           <FontAwesomeIcon
-            className={`${!userSession ? `text-card` : ""}h-5 w-5 `}
+            className={`${!userSession ? `text-card` : ""}h-5 w-5  `}
             icon={faUser}
           />
         )}

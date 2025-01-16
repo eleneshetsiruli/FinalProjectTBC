@@ -14,7 +14,7 @@ export const UserMenuItem = ({ item, path, onClick }: UserMenuItemProps) => {
   return (
     <DropdownMenuItem
       onClick={handleClick}
-      className="hover:text-card focus:outline-none focus:ring-0"
+      className="text-orange-500 focus:outline-none focus:ring-0  hover:text-gray-700 "
     >
       {item}
     </DropdownMenuItem>

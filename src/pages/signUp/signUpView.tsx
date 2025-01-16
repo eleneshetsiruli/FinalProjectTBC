@@ -50,7 +50,12 @@ export const SignUpView = () => {
             register={register}
             errors={errors}
           />
-          <Button type="submit">Register</Button>
+          <Button
+            className="bg-card text-white hover:text-popover"
+            type="submit"
+          >
+            Register
+          </Button>
         </form>
 
         <ParagrCva color="secondary" size="sm">
