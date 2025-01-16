@@ -24,6 +24,9 @@ import flightsPageEn from "./en/pages/flights.json";
 import profilePageKa from "./ka/pages/profile.json";
 import profilePageEn from "./en/pages/profile.json";
 
+import singleCountryKa from "./ka/pages/singleCountry.json";
+import singleCountryEn from "./en/pages/singleCountry.json";
+
 i18n.use(initReactI18next).init({
   resources: {
     ka: {
@@ -36,6 +39,7 @@ i18n.use(initReactI18next).init({
         "countries-page": countriesPageKa,
         "flights-page": flightsPageKa,
         "profile-page": profilePageKa,
+        "singleCountry-page": singleCountryKa,
       },
     },
     en: {
@@ -48,6 +52,7 @@ i18n.use(initReactI18next).init({
         "countries-page": countriesPageEn,
         "flights-page": flightsPageEn,
         "profile-page": profilePageEn,
+        "singleCountry-page": singleCountryEn,
       },
     },
   },

@@ -1,16 +1,20 @@
 import useFetchCountry from "@/api/query/hooks/useSingleCountry";
 import { useParams } from "react-router-dom";
 import { TourTips } from "./tourTips";
+import { useTranslation } from "react-i18next";
 
 export const SingleCountryView = () => {
   const { id } = useParams();
   const { country } = useFetchCountry(id || "");
+  const { i18n } = useTranslation();
+  const description =
+    i18n.language === "ka" ? country?.description_ka : country?.description_en;
 
   if (!id) {
     return <div>Country ID is missing</div>;
   }
 
-  const tours = country?.description_en
+  const tours = description
     ?.split(".")
     .filter((item: string) => item.trim() !== "");
 
