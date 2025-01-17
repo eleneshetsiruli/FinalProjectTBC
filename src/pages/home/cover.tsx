@@ -20,7 +20,7 @@ export const Cover: React.FC = () => {
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-70"></div>
-      <div className="text-center lg:w-[150px] absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="text-center lg:w-[150px] absolute z-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <h1 className="text-white">{t("home-page.offer")}</h1>
         <h1 className="text-white font-bold text-3xl animate-bounce">
           {t("home-page.italy")}

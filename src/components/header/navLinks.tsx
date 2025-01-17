@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 export const NavLinks = () => {
   const { t } = useTranslation();
   return (
-    <div className="lg:flex gap-16 hidden">
+    <div className=" lg:gap-16 gap-5 flex flex-col lg:flex-row">
       <SingleLink title={t("home-page.home")} goTo={pageEnums.HOME} />
       <SingleLink title={t("home-page.about")} goTo={pageEnums.ABOUT} />
       <SingleLink title={t("home-page.blogs")} goTo={pageEnums.BLOGS} />
