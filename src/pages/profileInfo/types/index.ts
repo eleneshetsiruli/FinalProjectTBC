@@ -3,8 +3,7 @@ import { ReactNode } from "react";
 export interface Profile {
   id: string;
   username: string;
-  full_name_en: string;
-  full_name_ka: string;
+  full_name: string;
   last_name_en: string;
   last_name_ka: string;
   telephone: string;

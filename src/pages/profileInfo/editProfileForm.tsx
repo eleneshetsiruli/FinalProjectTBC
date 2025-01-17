@@ -7,15 +7,9 @@ export const EditProfileForm = ({ updatedProfile, handleChange }: any) => {
   return (
     <div className="space-y-4">
       <ProfileInput
-        name="full_name_en"
-        label={t("profile-page.fullNameEn")}
-        value={updatedProfile?.full_name_en || ""}
-        onChange={handleChange}
-      />
-      <ProfileInput
-        name="full_name_ka"
-        label={t("profile-page.fullNameKa")}
-        value={updatedProfile?.full_name_ka || ""}
+        name="full_name"
+        label={t("profile-page.fullName")}
+        value={updatedProfile?.full_name || ""}
         onChange={handleChange}
       />
       <ProfileInput

@@ -44,16 +44,19 @@ export const ProfileView = () => {
       return (
         <>
           <Button onClick={handleSaveAndRefetch} className="bg-blue-500">
-            Save
+            {t("profile-page.save")}
           </Button>
           <Button onClick={() => setIsEditMode(false)} className="bg-gray-500">
-            Cancel
+            {t("profile-page.cancel")}
           </Button>
         </>
       );
     }
     return (
-      <Button onClick={() => setIsEditMode(true)} className="bg-blue-500">
+      <Button
+        onClick={() => setIsEditMode(true)}
+        className="bg-blue-500 mx-auto "
+      >
         {t("profile-page.edit")}
       </Button>
     );
