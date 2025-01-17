@@ -15,6 +15,7 @@ import { HotelsView } from "./pages/hotels";
 import { ProfileView } from "./pages/profileInfo";
 import { ProtectedRoute } from "./routes/ProtectedRoutes";
 import { AddBlog } from "./pages/addBlog";
+import PayPage from "./pages/pay";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path={pageEnums.FLIGHTS} element={<FlightsView />} />
           <Route path={pageEnums.HOTELS} element={<HotelsView />} />
           <Route path={pageEnums.PROFILE} element={<ProfileView />} />
+          <Route path="pay" element={<PayPage />} />
           <Route path="/blog/:blogId" element={<SingleBlog />} />
           <Route path=":id" element={<SingleCountryView />} />
         </Route>

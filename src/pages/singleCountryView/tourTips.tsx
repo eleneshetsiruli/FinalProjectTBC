@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Country } from "./types";
+import PayButton from "@/components/payButton";
 
 export const TourTips = ({ country }: { country: Country }) => {
   const { t, i18n } = useTranslation();
@@ -34,6 +35,7 @@ export const TourTips = ({ country }: { country: Country }) => {
           <p className="text-gray-700">{tip.text}</p>
         </div>
       ))}
+      <PayButton />
     </div>
   );
 };

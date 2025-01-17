@@ -6,9 +6,11 @@ import { useFormContext } from "react-hook-form";
 import { InputLabelBox } from "../../components/ui/inputLabelBox";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const methods = useFormContext<LoginFormData>();
+  const { t } = useTranslation();
 
   return (
     <form
@@ -16,9 +18,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
       onSubmit={methods.handleSubmit(onSubmit)}
     >
       <InputLabelBox>
-        <Label>Email</Label>
+        <Label className="mb-1">{t("auth-page.email")}</Label>
         <InputCva
-          placeholder="Enter your email address"
+          placeholder={t("auth-page.enterEmail")}
           type="email"
           {...methods.register("email")}
         />
@@ -28,9 +30,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
       </InputLabelBox>
 
       <InputLabelBox>
-        <Label>Password</Label>
+        <Label className="mb-1">{t("auth-page.password")}</Label>
         <InputCva
-          placeholder="Enter your password"
+          placeholder={t("auth-page.enterP")}
           {...methods.register("password")}
           type="password"
         />
@@ -40,7 +42,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
       </InputLabelBox>
 
       <Button className="bg-card text-white hover:text-popover" type="submit">
-        Continue
+        {t("auth-page.continiue")}
       </Button>
     </form>
   );

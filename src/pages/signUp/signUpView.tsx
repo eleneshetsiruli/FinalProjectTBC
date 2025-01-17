@@ -6,6 +6,7 @@ import { SignUpFormInputs } from "./interfaces";
 import FormField from "@/components/formField/formField";
 import { useSignUp } from "@/api/query/hooks/useSignUp";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 export const SignUpView = () => {
   const {
@@ -13,6 +14,7 @@ export const SignUpView = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<SignUpFormInputs>();
+  const { t } = useTranslation();
 
   const onSubmit: SubmitHandler<SignUpFormInputs> = (data) => {
     mutation.mutate(data);
@@ -25,26 +27,26 @@ export const SignUpView = () => {
       <CardCva size="md" padding="md" gap="md">
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
           <FormField
-            label="First name"
+            label={t("auth-page.first")}
             name="firstName"
             register={register}
             errors={errors}
           />
           <FormField
-            label="Last name"
+            label={t("auth-page.last")}
             name="lastName"
             register={register}
             errors={errors}
           />
           <FormField
-            label="Email"
+            label={t("auth-page.email")}
             name="email"
             type="email"
             register={register}
             errors={errors}
           />
           <FormField
-            label="Password"
+            label={t("auth-page.password")}
             name="password"
             type="password"
             register={register}
@@ -54,14 +56,18 @@ export const SignUpView = () => {
             className="bg-card text-white hover:text-popover"
             type="submit"
           >
-            Register
+            {t("auth-page.register")}
           </Button>
         </form>
 
         <ParagrCva color="secondary" size="sm">
-          By creating an account, you agree with our
-          <span className="text-orange-600"> Terms & conditions</span> and
-          <span className="text-orange-600"> Privacy policy</span>.
+          {t("auth-page.by")}
+          <span className="text-orange-600">
+            <span className="mx-1">{t("auth-page.terms")}</span>
+          </span>
+          {t("auth-page.and")}
+          <span className="text-orange-600 mx-1">{t("auth-page.privacy")}</span>
+          .
         </ParagrCva>
       </CardCva>
     </FormContainer>

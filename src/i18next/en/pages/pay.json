@@ -1,0 +1,9 @@
+{
+  "pay": " Reservation Payment",
+  "paying": "You are paying for: Default Reservation",
+  "amount": "Amount: 100€ per day to book",
+  "payNow": "Pay Now",
+  "suc": "Payment successful! You have reserved:",
+  "selectDays": "Select the number of days",
+  "total": "Total price"
+}

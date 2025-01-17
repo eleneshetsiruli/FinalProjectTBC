@@ -27,6 +27,12 @@ import profilePageEn from "./en/pages/profile.json";
 import singleCountryKa from "./ka/pages/singleCountry.json";
 import singleCountryEn from "./en/pages/singleCountry.json";
 
+import singlePayKa from "./ka/pages/pay.json";
+import singlePayEn from "./en/pages/pay.json";
+
+import authKa from "./ka/pages/auth.json";
+import authEn from "./en/pages/auth.json";
+
 i18n.use(initReactI18next).init({
   resources: {
     ka: {
@@ -40,6 +46,8 @@ i18n.use(initReactI18next).init({
         "flights-page": flightsPageKa,
         "profile-page": profilePageKa,
         "singleCountry-page": singleCountryKa,
+        "pay-page": singlePayKa,
+        "auth-page": authKa,
       },
     },
     en: {
@@ -53,6 +61,8 @@ i18n.use(initReactI18next).init({
         "flights-page": flightsPageEn,
         "profile-page": profilePageEn,
         "singleCountry-page": singleCountryEn,
+        "pay-page": singlePayEn,
+        "auth-page": authEn,
       },
     },
   },

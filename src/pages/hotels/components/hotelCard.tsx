@@ -3,12 +3,15 @@ import { StarRating } from "./starRating";
 import { HotelCardProps } from "../types";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import PayButton from "@/components/payButton";
 
 const HotelCard: React.FC<HotelCardProps> = ({ hotel }) => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
+
   const name = i18n.language === "en" ? hotel.name_en : hotel.name_ka;
   const description =
     i18n.language === "en" ? hotel.description_en : hotel.description_ka;
+
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
       <img
@@ -26,9 +29,7 @@ const HotelCard: React.FC<HotelCardProps> = ({ hotel }) => {
           <Button className=" bg-transparent border-card text-blue-500">
             {hotel.price}€
           </Button>
-          <Button className="bg-blue-500 text-white hover:bg-card">
-            {t("blog-page.book")}
-          </Button>
+          <PayButton />
         </div>
       </div>
     </div>
