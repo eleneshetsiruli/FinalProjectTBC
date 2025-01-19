@@ -7,7 +7,9 @@ export enum pageEnums {
   SERVICES = "services",
   HOTELS = "hotels",
   FLIGHTS = "/flights",
+  ID = ":id",
   PROFILE = "profile",
   ADDBLOG = "/addBlog",
   PAY = "/pay",
+  bLOGID = "/blog/:blogId",
 }

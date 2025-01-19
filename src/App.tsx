@@ -34,9 +34,9 @@ function App() {
           <Route path={pageEnums.FLIGHTS} element={<FlightsView />} />
           <Route path={pageEnums.HOTELS} element={<HotelsView />} />
           <Route path={pageEnums.PROFILE} element={<ProfileView />} />
-          <Route path="pay" element={<PayPage />} />
-          <Route path="/blog/:blogId" element={<SingleBlog />} />
-          <Route path=":id" element={<SingleCountryView />} />
+          <Route path={pageEnums.PAY} element={<PayPage />} />
+          <Route path={pageEnums.bLOGID} element={<SingleBlog />} />
+          <Route path={pageEnums.ID} element={<SingleCountryView />} />
         </Route>
       </Route>
     </Routes>
