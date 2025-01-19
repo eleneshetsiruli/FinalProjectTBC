@@ -1,11 +1,11 @@
-import { useProfile } from "@/api/query/hooks/useProfile";
-import { useProfileEdit } from "@/api/query/hooks/useProfileAction";
-import { ProfileContent } from "./profileContent";
-import { EditProfileForm } from "./editProfileForm";
-import { Button } from "./editInfoButtons";
 import { Loading } from "../isLoading";
 import { ProfileContainer } from "./profileContainer";
+import { EditProfileForm } from "./editProfileForm";
+import { ProfileContent } from "./profileContent";
+import { useProfileEdit } from "@/api/query/hooks/useProfileAction";
 import { useTranslation } from "react-i18next";
+import { useProfile } from "@/api/query/hooks/useProfile";
+import { Button } from "@/components/ui/button";
 
 export const ProfileView = () => {
   const { data: profile, isLoading, refetch } = useProfile();
@@ -25,6 +25,14 @@ export const ProfileView = () => {
   };
 
   const RenderProfileContent = () => {
+    if (!profile) {
+      return (
+        <EditProfileForm
+          updatedProfile={updatedProfile}
+          handleChange={handleChange}
+        />
+      );
+    }
     return (
       <>
         {isEditMode ? (
@@ -68,13 +76,13 @@ export const ProfileView = () => {
 
   return (
     <ProfileContainer>
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <img
           src={profile?.avatar_url || "/default-avatar.png"}
           alt="Profile Avatar"
           className="w-32 h-32 rounded-full border-4 border-gray-300 shadow-md"
         />
-      </div>
+      </div> */}
       <RenderProfileContent />
       <div className="flex justify-between space-x-4">
         <RenderActionButtons />

@@ -16,8 +16,10 @@ import { ProfileView } from "./pages/profileInfo";
 import { ProtectedRoute } from "./routes/ProtectedRoutes";
 import { AddBlog } from "./pages/addBlog";
 import PayPage from "./pages/pay";
+import useCreateProfileOnLogin from "./hooks/useCreateProfile";
 
 function App() {
+  useCreateProfileOnLogin();
   return (
     <Routes>
       <Route element={<MainLayout />}>
