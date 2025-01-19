@@ -1,8 +1,18 @@
 import { useTranslation } from "react-i18next";
 import { ProfileInput } from "./profileInput";
+import { AvatarSelect } from "./avatarSelect";
 
 export const EditProfileForm = ({ updatedProfile, handleChange }: any) => {
   const { t } = useTranslation();
+
+  const handleAvatarChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    handleChange({
+      target: {
+        name: "avatar_url",
+        value: event.target.value,
+      },
+    });
+  };
 
   return (
     <div className="space-y-4">
@@ -29,6 +39,10 @@ export const EditProfileForm = ({ updatedProfile, handleChange }: any) => {
         label={t("profile-page.telephone")}
         value={updatedProfile?.telephone || ""}
         onChange={handleChange}
+      />
+      <AvatarSelect
+        value={updatedProfile?.avatar_url || ""}
+        onChange={handleAvatarChange}
       />
     </div>
   );

@@ -24,3 +24,7 @@ export interface ProfileContentProps {
 export type ProfileContainerProps = {
   children: ReactNode;
 };
+export interface AvatarSelectProps {
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}

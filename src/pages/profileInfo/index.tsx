@@ -76,13 +76,13 @@ export const ProfileView = () => {
 
   return (
     <ProfileContainer>
-      {/* <div className="flex justify-center">
+      <div className="flex justify-center">
         <img
           src={profile?.avatar_url || "/default-avatar.png"}
           alt="Profile Avatar"
           className="w-32 h-32 rounded-full border-4 border-gray-300 shadow-md"
         />
-      </div> */}
+      </div>
       <RenderProfileContent />
       <div className="flex justify-between space-x-4">
         <RenderActionButtons />
