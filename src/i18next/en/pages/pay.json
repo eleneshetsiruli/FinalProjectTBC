@@ -7,5 +7,6 @@
   "selectDays": "Select the number of days",
   "total": "Total price",
   "book": "Book now",
-  "delete": "Delete"
+  "delete": "Delete",
+  "booked": "Your Booked Hotels"
 }

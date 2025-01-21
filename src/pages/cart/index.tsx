@@ -1,33 +1,43 @@
-import { useCartHotels } from "@/api/query/hooks/useCartHotels/useCartHotels";
-import HotelList from "../hotels/components/hotelList";
+import { useState } from "react";
 import { Loading } from "../isLoading";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { CartHeader } from "./cartHeader";
+import { HotelCard } from "./hotelCart";
+import { useCartHotels } from "@/api/query/hooks/useCartHotels/useCartHotels";
+import { useDeleteCartHotel } from "@/api/query/hooks/useDeleteCartHotel";
+import { useTranslation } from "react-i18next";
 
 const Cart: React.FC = () => {
-  const savedCart = JSON.parse(localStorage.getItem("cart") || "[]");
-
+  const [savedCart, setSavedCart] = useState<string[]>(() =>
+    JSON.parse(localStorage.getItem("cart") || "[]")
+  );
   const { data: cartHotels, isLoading, isError } = useCartHotels(savedCart);
+  const { mutate: deleteHotel } = useDeleteCartHotel();
+  const { t } = useTranslation();
+
+  const handleDelete = (hotelId: string) => {
+    deleteHotel(hotelId, {
+      onSuccess: () => {
+        const updatedCart = savedCart.filter((id) => id !== hotelId);
+        setSavedCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      },
+    });
+  };
+
+  if (isLoading) return <Loading />;
+  if (isError) return <p>{t("pay-page.error")}</p>;
 
   return (
-    <div className="cart">
-      <div className="flex justify-center items-center gap-8 ">
-        <h2 className="text-popover-foreground text-center lg:text-4xl my-4">
-          Your Booked Hotels
-        </h2>
-        <FontAwesomeIcon
-          className="w-8 h-8 text-orange-500 lg:w-10 lg:h-10"
-          icon={faCartShopping}
-        />
-      </div>
-      {isLoading ? (
-        <Loading />
-      ) : isError ? (
-        <p>Error fetching hotels. Please try again later.</p>
-      ) : cartHotels && cartHotels.length > 0 ? (
-        <HotelList hotels={cartHotels} isCartPage={true} />
+    <div className="lg:mx-20">
+      <CartHeader />
+      {cartHotels && cartHotels.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cartHotels.map((hotel) => (
+            <HotelCard key={hotel.id} hotel={hotel} onDelete={handleDelete} />
+          ))}
+        </div>
       ) : (
-        <p>No hotels booked yet.</p>
+        <p>{t("pay-page.no-booked")}</p>
       )}
     </div>
   );

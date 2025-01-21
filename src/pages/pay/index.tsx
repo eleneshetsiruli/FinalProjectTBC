@@ -19,7 +19,7 @@ const PayPage: React.FC = () => {
 
   const handlePaymentSuccess = () => {
     alert(
-      `${t("pay-page.suc")} ${reservationDetails.item}. ${t("pay-page.total")}: ${totalAmount}€`
+      `${t("pay-page.suc")} ${reservationDetails.item}. ${t("pay-page.total")}: ${totalAmount}€`,
     );
     navigate(pageEnums.HOME, {
       state: { reservationDetails, days, totalAmount },
