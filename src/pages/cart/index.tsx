@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const Cart: React.FC = () => {
   const [savedCart, setSavedCart] = useState<string[]>(() =>
-    JSON.parse(localStorage.getItem("cart") || "[]")
+    JSON.parse(localStorage.getItem("cart") || "[]"),
   );
   const { data: cartHotels, isLoading, isError } = useCartHotels(savedCart);
   const { mutate: deleteHotel } = useDeleteCartHotel();

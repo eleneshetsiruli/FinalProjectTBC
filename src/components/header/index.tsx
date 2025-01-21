@@ -20,7 +20,7 @@ export const Header = () => {
   return (
     <div
       className={`h-[100px] flex items-center justify-around z-10 my-0   ${
-        isHomePage ? "absolute w-full text-white" : "my-4 bg-gray-800 p-5"
+        isHomePage ? "absolute w-full text-white" : " bg-gray-800 p-5 mb-20"
       }`}
     >
       <Logo size="lg:w-[170px] w-[100px] cursor-pointer" />

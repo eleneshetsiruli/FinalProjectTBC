@@ -4,7 +4,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { useTranslation } from "react-i18next";
@@ -25,8 +24,7 @@ const LanguageSwitcher = () => {
         <DropdownMenuTrigger className={commonClasses}>
           {t("home-page.lang_version")} <FontAwesomeIcon icon={faCaretDown} />
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuSeparator />
+        <DropdownMenuContent className="bg-gray-800 p-2 rounded">
           <DropdownMenuItem
             className={commonClasses}
             onClick={() => {
