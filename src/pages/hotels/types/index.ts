@@ -34,6 +34,7 @@ export interface HotelCardProps {
     name_ka: string;
     description_ka: string;
   };
+  isCartPage: boolean;
 }
 
 export interface HotelListProps {
@@ -47,4 +48,10 @@ export interface HotelListProps {
     price: string;
     name_ka: string;
   }[];
+  isCartPage: boolean;
+}
+
+export interface PayButtonProps {
+  id: string;
+  onPay: () => void;
 }

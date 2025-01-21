@@ -12,4 +12,5 @@ export enum pageEnums {
   ADDBLOG = "/addBlog",
   PAY = "/pay",
   bLOGID = "/blog/:blogId",
+  CART = "/cart",
 }

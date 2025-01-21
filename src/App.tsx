@@ -17,6 +17,7 @@ import { ProtectedRoute } from "./routes/ProtectedRoutes";
 import { AddBlog } from "./pages/addBlog";
 import PayPage from "./pages/pay";
 import useCreateProfileOnLogin from "./hooks/useCreateProfile";
+import Cart from "./pages/cart";
 
 function App() {
   useCreateProfileOnLogin();
@@ -35,6 +36,7 @@ function App() {
           <Route path={pageEnums.HOTELS} element={<HotelsView />} />
           <Route path={pageEnums.PROFILE} element={<ProfileView />} />
           <Route path={pageEnums.PAY} element={<PayPage />} />
+          <Route path={pageEnums.CART} element={<Cart />} />
           <Route path={pageEnums.bLOGID} element={<SingleBlog />} />
           <Route path={pageEnums.ID} element={<SingleCountryView />} />
         </Route>

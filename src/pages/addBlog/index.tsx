@@ -16,7 +16,7 @@ export const AddBlog = () => {
   const { t } = useTranslation();
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -46,7 +46,7 @@ export const AddBlog = () => {
       setFile(null);
 
       const fileInput = document.getElementById(
-        "image_url"
+        "image_url",
       ) as HTMLInputElement;
       if (fileInput) fileInput.value = "";
     } catch (error) {

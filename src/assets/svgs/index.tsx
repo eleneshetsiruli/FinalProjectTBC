@@ -2,7 +2,7 @@ import { useLogout } from "@/api/query/hooks/useAuth";
 import { UserMenuItem } from "@/components/header/userMenuItem";
 import { pageEnums } from "@/pages/enums/pageEnums";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -54,6 +54,10 @@ export const User = () => {
             <UserMenuItem
               item={t("home-page.profile")}
               path={pageEnums.PROFILE}
+            />
+            <UserMenuItem
+              item={<FontAwesomeIcon icon={faCartShopping} />}
+              path={pageEnums.CART}
             />
           </>
         )}

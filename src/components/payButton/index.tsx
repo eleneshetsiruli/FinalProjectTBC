@@ -1,22 +1,20 @@
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
-import { pageEnums } from "@/pages/enums/pageEnums";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
-const PayButton = () => {
-  const navigate = useNavigate();
-  const { t } = useTranslation();
+interface PayButtonProps {
+  id: string;
+  onPay: () => void;
+}
 
-  const handleGoPay = () => {
-    navigate(pageEnums.PAY);
-  };
+const PayButton: React.FC<PayButtonProps> = ({ onPay }) => {
+  const { t } = useTranslation();
   return (
-    <Button
-      onClick={handleGoPay}
-      className="bg-blue-500 text-white hover:bg-card w-[100%]"
+    <button
+      onClick={() => onPay()}
+      className="bg-blue-500 text-white px-4 py-2 rounded"
     >
-      {t("blog-page.book")}
-    </Button>
+      {t("pay-page.book")}
+    </button>
   );
 };
 

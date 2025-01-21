@@ -5,5 +5,7 @@
   "payNow": "Pay Now",
   "suc": "Payment successful! You have reserved:",
   "selectDays": "Select the number of days",
-  "total": "Total price"
+  "total": "Total price",
+  "book": "Book now",
+  "delete": "Delete"
 }
