@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Input } from "@/components/ui/input";
@@ -14,20 +14,28 @@ const Search = ({ onSearchChange }: SearchProps) => {
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
-    const query = urlParams.get("search");
-    if (query) {
+    const query = urlParams.get("search") || "";
+    if (query !== searchTerm) {
       setSearchTerm(query);
-      onSearchChange(query);
     }
-  }, [location.search, onSearchChange]);
+  }, [location.search, searchTerm]);
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const term = event.target.value;
-    setSearchTerm(term);
-    onSearchChange(term);
+  const handleSearchChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const term = event.target.value;
+      setSearchTerm(term);
+      onSearchChange(term);
 
-    navigate(`?search=${term}`, { replace: true });
-  };
+      const urlParams = new URLSearchParams(location.search);
+      if (term) {
+        urlParams.set("search", term);
+      } else {
+        urlParams.delete("search");
+      }
+      navigate(`?${urlParams.toString()}`, { replace: true });
+    },
+    [navigate, location.search, onSearchChange]
+  );
 
   return (
     <div className="relative">

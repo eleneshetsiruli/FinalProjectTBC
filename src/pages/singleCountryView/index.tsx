@@ -19,7 +19,7 @@ export const SingleCountryView = () => {
     .filter((item: string) => item.trim() !== "");
 
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex flex-col items-center gap-5 ">
       <img
         className="w-full h-64 object-cover rounded-lg shadow-lg "
         src={country?.image}
