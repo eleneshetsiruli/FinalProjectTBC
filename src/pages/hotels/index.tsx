@@ -67,7 +67,7 @@ export const HotelsView = () => {
         value={selectedCountry}
         onChange={handleCountryChange}
       />
-      <HotelList hotels={hotels || []} />
+      <HotelList hotels={hotels || []} isCartPage={false} />
       <Pagination
         page={page}
         onNext={handleNext}

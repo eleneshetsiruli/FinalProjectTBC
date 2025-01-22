@@ -34,7 +34,7 @@ const Search = ({ onSearchChange }: SearchProps) => {
       }
       navigate(`?${urlParams.toString()}`, { replace: true });
     },
-    [navigate, location.search, onSearchChange]
+    [navigate, location.search, onSearchChange],
   );
 
   return (
