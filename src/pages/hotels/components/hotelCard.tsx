@@ -14,7 +14,6 @@ const HotelCard: React.FC<HotelCardProps> = ({ hotel, isCartPage }) => {
   const navigate = useNavigate();
   const { mutate: deleteHotel } = useDeleteCartHotel();
 
-  // Get hotel name and description based on language
   const name =
     i18n.language === "en" ? hotel.name_en || hotel.name_ka : hotel.name_ka;
   const description =
@@ -22,7 +21,6 @@ const HotelCard: React.FC<HotelCardProps> = ({ hotel, isCartPage }) => {
       ? hotel.description_en || hotel.description_ka
       : hotel.description_ka;
 
-  // Handle adding to cart
   const handleAddToCart = (id: string) => {
     navigate(pageEnums.PAY);
     const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
