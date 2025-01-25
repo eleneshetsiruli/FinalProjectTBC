@@ -16,7 +16,7 @@ export const AddBlog = () => {
   const { t } = useTranslation();
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -46,7 +46,7 @@ export const AddBlog = () => {
       setFile(null);
 
       const fileInput = document.getElementById(
-        "image_url",
+        "image_url"
       ) as HTMLInputElement;
       if (fileInput) fileInput.value = "";
     } catch (error) {
@@ -55,7 +55,7 @@ export const AddBlog = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-11">
       <h1 className="text-2xl font-bold text-orange-600 mb-4">
         {t("addBlog-page.add")}
       </h1>

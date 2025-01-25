@@ -8,5 +8,6 @@
   "total": "Total price",
   "book": "Book now",
   "delete": "Delete",
-  "booked": "Your Booked Hotels"
+  "booked": "Your Booked Hotels",
+  "no-booked": "You have no booked hotels"
 }

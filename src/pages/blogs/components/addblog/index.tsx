@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const AddBlogComponent = () => {
   const { t } = useTranslation();
   return (
-    <div className="flex justify-center items-center gap-4 m-10 p-3 bg-gradient-to-r  rounded-lg ">
+    <div className="flex justify-center items-center gap-4 m-10 p-3 bg-gradient-to-r  rounded-lg">
       <Link
         to={pageEnums.ADDBLOG}
         className="text-xl font-extrabold italic tracking-wide drop-shadow-md text-popover-foreground"

@@ -27,7 +27,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, isExpanded, onToggle }) => {
           {formattedDate}
         </ParagrCva>
       </div>
-      <img src={blog.image_url} alt="image" className="w-full h-[450px]" />
+      <img
+        src={blog.image_url}
+        alt="image"
+        className="w-full h-[450px] object-cover"
+      />
 
       <div className="flex flex-col">
         <ParagrCva color="secondary">

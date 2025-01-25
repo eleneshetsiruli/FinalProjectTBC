@@ -45,7 +45,7 @@ export const ContactForm = () => {
           {t("about-page.question")}
         </Label>
         <Textarea
-          className="w-[300px] border-muted"
+          className="w-[300px] border-muted bg-white"
           {...register("question")}
         />
         {errors.question && <ParagrCva>{errors.question.message}</ParagrCva>}

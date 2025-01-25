@@ -17,7 +17,7 @@ export const BlogsView = () => {
   };
   const reversedBlogs = blogs?.slice().reverse();
   return (
-    <div className="flex flex-col justify-center items-center gap-4">
+    <div className="flex flex-col justify-center items-center gap-4 ">
       <AddBlogComponent />
       {reversedBlogs
         ?.slice(0, visibleCount)

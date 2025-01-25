@@ -20,7 +20,7 @@ const SingleBlog: React.FC = () => {
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mt-10">
       <BlogCard
         key={blog.id}
         blog={blog}
