@@ -1,5 +1,7 @@
 import { AllCountry } from "./allCountry/index.tsx";
 
-export const ServiceView = () => {
+const ServiceView = () => {
   return <AllCountry />;
 };
+
+export default ServiceView;

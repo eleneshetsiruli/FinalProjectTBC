@@ -2,7 +2,7 @@ import supabase from "@/lib/supabase";
 import { LoginFormData } from "@/pages/login/interfaces";
 
 export const signInWithEmailPassword = async (
-  data: LoginFormData
+  data: LoginFormData,
 ): Promise<{ access_token: string; user: any }> => {
   const { email, password } = data;
   const { data: user, error } = await supabase.auth.signInWithPassword({

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-export const HotelsView = () => {
+const HotelsView = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const pageFromUrl = parseInt(searchParams.get("page") || "1", 10);
@@ -77,3 +77,5 @@ export const HotelsView = () => {
     </div>
   );
 };
+
+export default HotelsView;

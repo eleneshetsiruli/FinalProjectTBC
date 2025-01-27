@@ -5,7 +5,7 @@ import BlogCard from "./components/blogCard";
 import { LoadButton } from "./components/loadButton";
 import { AddBlogComponent } from "./components/addblog";
 
-export const BlogsView = () => {
+const BlogsView = () => {
   const { data: blogs } = useFetchBlogs();
 
   const { toggledItems: expandedBlogs, handleToggle } = useToggleSet();
@@ -35,3 +35,5 @@ export const BlogsView = () => {
     </div>
   );
 };
+
+export default BlogsView;

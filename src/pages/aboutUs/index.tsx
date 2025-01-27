@@ -7,7 +7,7 @@ import { ContactForm } from "./components/contactForm";
 import { BusinessHours } from "./components/businessHours";
 import MapComponent from "./components/map";
 
-export const AboutUsView = () => {
+const AboutUsView = () => {
   return (
     <div className="flex flex-col  gap-10 lg:m-10 lg:p-8 m-2 ">
       <AboutParagrap />
@@ -23,3 +23,4 @@ export const AboutUsView = () => {
     </div>
   );
 };
+export default AboutUsView;

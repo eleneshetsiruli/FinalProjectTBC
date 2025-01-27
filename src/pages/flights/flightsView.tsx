@@ -9,7 +9,7 @@ import { useState } from "react";
 import { flightRequestSchema } from "./zod";
 import { useTranslation } from "react-i18next";
 
-export const FlightsView: React.FC = () => {
+const FlightsView: React.FC = () => {
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [departureDate, setDepartureDate] = useState<string>("");
   const [arrivalDate, setArrivalDate] = useState<string>("");
@@ -30,7 +30,7 @@ export const FlightsView: React.FC = () => {
         toast({
           title: error.message,
           variant: "destructive",
-        }),
+        })
       );
       return;
     }
@@ -85,3 +85,5 @@ export const FlightsView: React.FC = () => {
     </Background>
   );
 };
+
+export default FlightsView;
